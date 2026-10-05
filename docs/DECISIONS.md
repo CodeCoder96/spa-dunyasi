@@ -112,3 +112,9 @@ Her kayıtta: tarih, karar, alternatifler, gerekçe.
 ## D-023 · 2026-10-03 · TAS-11 düzyazıda ve sessiz render hatalarına karşı koruma
 - Markdown düzyazısındaki marka adları (Spa Dünyası, Spa World), ürünlerin tam adları ve ayırt edici model adları (Avant, Ayurveda, Base W/X…, Evony, Mercury, Odessa, Uranus, Venus, Lux Soft, Spa Life) `<span translate="no">` ile sarılır (Sätteri metin eklentisi `noTranslate`). Tek başına sıradan İngilizce kelime olan model adları (Light, Soft, Classic, Moon, Wood…) yalnızca tam ürün adı içinde korunur; düz metinde yanlış eşleşmeyi önlemek için.
 - Astro içerik katmanı Markdown render hatalarını loglayıp build'i başarılı bitirebiliyor. `npm run build` artık `scripts/build.mjs` ile çalışır ve `[ERROR]` satırında başarısız olur; ayrıca `verify:output` her içerik gövdesinin HTML'e basıldığını doğrular (`kal-04-rendered-content`, mutasyon testiyle kanıtlandı).
+
+## D-024 · 2026-10-05 · GitHub remote (spec'teki "yalnızca yerel git" kuralından sapma)
+- **Durum:** Spec git'i yalnızca yerel tutar (remote/push yok). Kullanıcı 2026-10-05'te public bir GitHub reposu açtı ve projenin oraya bağlanmasını istedi: `https://github.com/CodeCoder96/spa-dunyasi.git`.
+- **Karar:** `origin` bu repoya ayarlandı, `main` pushlandı. Yerel `.git` geçmişi (faz-1…faz-8 commit'leri) kaybolduğu için mevcut durum tek bir snapshot commit olarak yeniden oluşturuldu. Repo public olduğundan `.remember/` ve `spadunyasi-kaynak.zip` `.gitignore`'a eklendi. Commit kimliği GitHub noreply adresidir, böylece kişisel e-posta yayımlanmaz.
+- **Değişmeyen:** Yayına alma yine FileZilla ile elle yapılır. GitHub yalnızca kaynak kodun yedeği/sürüm geçmişidir, deploy kanalı değildir.
+- **Alternatif:** Yalnızca yerel git'te kalmak (kullanıcının açık isteğiyle reddedildi).
