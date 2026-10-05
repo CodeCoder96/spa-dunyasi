@@ -1,0 +1,413 @@
+---
+// Header (MIM-10, SAB-11, TAS-07). Fixed height; dropdowns open on click (JS) and are plain links without JS.
+import Icon from './Icon.astro';
+import logoLight from '../assets/logo/logo-light.svg';
+import { href, routesOf, route as getRoute, type Route } from '../lib/routes.ts';
+import { t } from '../i18n/ui.ts';
+import { waLink, waMessage } from '../lib/contact.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const categories = routesOf(lang, 'category');
+const services = routesOf(lang, 'service');
+const homeHref = href(lang, 'sayfa:anasayfa');
+const productsRoute = getRoute(lang, 'sayfa:urunler');
+const servicesRoute = getRoute(lang, 'sayfa:hizmetler');
+const simple = [getRoute(lang, 'sayfa:rehber'), getRoute(lang, 'sayfa:hakkimizda'), getRoute(lang, 'sayfa:iletisim')];
+const current = (r: Route) => (r.id === route.id ? 'page' : undefined);
+const inSection = (type: string) =>
+  (type === 'products' && ['products', 'category', 'product'].includes(route.type)) ||
+  (type === 'services' && ['services', 'service'].includes(route.type));
+const altLabel = t(lang, 'lang.switch');
+const altLang = lang === 'tr' ? 'en' : 'tr';
+const wa = waLink(waMessage(lang, { kind: 'general' }));
+---
+
+<header class="site-header no-print" data-header>
+  <div class="container site-header__bar">
+    <a class="site-header__logo" href={homeHref}>
+      <img src={logoLight.src} width="168" height="32" alt="Spa Dünyası" translate="no" />
+    </a>
+
+    <nav class="nav-desktop" aria-label={t(lang, 'nav.main')}>
+      <ul role="list" class="nav-desktop__list">
+        <li class="nav-dd" data-dropdown>
+          <a class="nav-link" href={productsRoute.path} aria-current={inSection('products') ? 'true' : undefined} data-dd-link>{t(lang, 'nav.products')}</a>
+          <button class="nav-link nav-dd__toggle" type="button" aria-expanded="false" aria-controls="dd-products" hidden data-dd-toggle>
+            {t(lang, 'nav.products')}<Icon name="chevron-down" size={16} />
+          </button>
+          <div class="nav-dd__panel" id="dd-products" hidden data-dd-panel>
+            <ul role="list">
+              <li><a href={productsRoute.path} aria-current={current(productsRoute)}>{t(lang, 'nav.allProducts')}</a></li>
+              {categories.map((c) => <li><a href={c.path} aria-current={current(c)}>{c.title}</a></li>)}
+            </ul>
+          </div>
+        </li>
+        <li class="nav-dd" data-dropdown>
+          <a class="nav-link" href={servicesRoute.path} aria-current={inSection('services') ? 'true' : undefined} data-dd-link>{t(lang, 'nav.services')}</a>
+          <button class="nav-link nav-dd__toggle" type="button" aria-expanded="false" aria-controls="dd-services" hidden data-dd-toggle>
+            {t(lang, 'nav.services')}<Icon name="chevron-down" size={16} />
+          </button>
+          <div class="nav-dd__panel" id="dd-services" hidden data-dd-panel>
+            <ul role="list">
+              <li><a href={servicesRoute.path} aria-current={current(servicesRoute)}>{t(lang, 'nav.allServices')}</a></li>
+              {services.map((s) => <li><a href={s.path} aria-current={current(s)}>{s.title}</a></li>)}
+            </ul>
+          </div>
+        </li>
+        {simple.map((r) => <li><a class="nav-link" href={r.path} aria-current={current(r)}>{r.title}</a></li>)}
+      </ul>
+    </nav>
+
+    <div class="site-header__actions">
+      <a class="lang-switch" href={route.altPath} hreflang={altLang} lang={altLang}>
+        <Icon name="globe" size={18} /><span>{altLabel}</span>
+      </a>
+      <button class="quote-trigger" type="button" hidden data-quote-open aria-haspopup="dialog">
+        <Icon name="list" size={22} />
+        <span class="visually-hidden">{t(lang, 'quote.open')}</span>
+        <span class="quote-trigger__count" data-quote-count aria-hidden="true">0</span>
+      </button>
+      <a class="btn btn--sm site-header__cta" href={wa} target="_blank" rel="noopener" data-cta="header">
+        <Icon name="whatsapp" />{t(lang, 'cta.whatsapp')}
+      </a>
+      <button class="menu-trigger" type="button" popovertarget="mobile-menu" aria-controls="mobile-menu" aria-expanded="false" data-menu-open>
+        <Icon name="menu" size={24} /><span class="visually-hidden">{t(lang, 'nav.menu')}</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" popover data-mobile-menu>
+    <div class="mobile-menu__head">
+      <span class="mobile-menu__title">{t(lang, 'nav.menu')}</span>
+      <button class="mobile-menu__close" type="button" popovertarget="mobile-menu" popovertargetaction="hide" data-menu-close>
+        <Icon name="close" size={24} /><span class="visually-hidden">{t(lang, 'nav.closeMenu')}</span>
+      </button>
+    </div>
+    <nav aria-label={t(lang, 'nav.mobile')}>
+      <ul role="list" class="mobile-menu__list">
+        <li>
+          <a class="mobile-menu__top" href={productsRoute.path}>{t(lang, 'nav.products')}</a>
+          <ul role="list" class="mobile-menu__sub">
+            {categories.map((c) => <li><a href={c.path} aria-current={current(c)}>{c.title}</a></li>)}
+          </ul>
+        </li>
+        <li>
+          <a class="mobile-menu__top" href={servicesRoute.path}>{t(lang, 'nav.services')}</a>
+          <ul role="list" class="mobile-menu__sub">
+            {services.map((s) => <li><a href={s.path} aria-current={current(s)}>{s.title}</a></li>)}
+          </ul>
+        </li>
+        {simple.map((r) => <li><a class="mobile-menu__top" href={r.path} aria-current={current(r)}>{r.title}</a></li>)}
+      </ul>
+    </nav>
+    <div class="mobile-menu__foot">
+      <a class="lang-switch" href={route.altPath} hreflang={altLang} lang={altLang}><Icon name="globe" size={18} />{altLabel}</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  @layer components {
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: var(--z-header);
+      height: var(--header-h);
+      background: var(--c-bg);
+      border-bottom: 1px solid transparent;
+      transition: box-shadow var(--dur) var(--ease);
+    }
+
+    /* Shadow appears once the page scrolls; height never changes (TAS-07). */
+    @supports (animation-timeline: scroll()) {
+      .site-header {
+        animation: header-shadow linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 64px;
+      }
+    }
+
+    @keyframes header-shadow {
+      to {
+        box-shadow: var(--shadow-header);
+      }
+    }
+
+    .site-header__bar {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: var(--s-4);
+    }
+
+    .site-header__logo {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      margin-right: auto;
+      flex: none;
+    }
+
+    .site-header__logo img {
+      width: 150px;
+      height: auto;
+    }
+
+    .nav-desktop {
+      display: none;
+    }
+
+    .site-header__actions {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+    }
+
+    .site-header__cta,
+    .site-header__actions > .lang-switch {
+      display: none;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      min-height: 44px;
+      padding-inline: var(--s-2);
+      color: var(--c-ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: var(--fs-small);
+    }
+
+    .quote-trigger,
+    .menu-trigger,
+    .mobile-menu__close {
+      position: relative;
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-pill);
+      color: var(--c-ink);
+    }
+
+    .quote-trigger[hidden] {
+      display: none;
+    }
+
+    .quote-trigger__count[hidden] {
+      display: none;
+    }
+
+    .quote-trigger__count {
+      position: absolute;
+      top: 2px;
+      right: 0;
+      min-width: 20px;
+      height: 20px;
+      padding-inline: 5px;
+      border-radius: var(--radius-pill);
+      background: var(--c-primary);
+      color: var(--c-on-primary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      line-height: 20px;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+
+    @media (hover: hover) {
+      .quote-trigger:hover,
+      .menu-trigger:hover,
+      .mobile-menu__close:hover {
+        background: var(--c-sand);
+      }
+
+      .lang-switch:hover {
+        color: var(--c-primary);
+      }
+    }
+
+    /* Mobile menu (Popover API; class fallback set by JS when popover is unsupported). */
+    .mobile-menu {
+      inset: 0 0 0 auto;
+      width: min(92vw, 400px);
+      height: 100dvh;
+      max-height: none;
+      margin: 0;
+      padding: 0 var(--s-6) var(--s-8);
+      background: var(--c-bg);
+      color: var(--c-ink);
+      border: 0;
+      border-left: var(--border);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .mobile-menu::backdrop {
+      background: var(--c-scrim);
+    }
+
+    .mobile-menu.is-open {
+      display: block;
+      position: fixed;
+      z-index: calc(var(--z-cookie) + 2);
+    }
+
+    .mobile-menu__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-h);
+    }
+
+    .mobile-menu__title {
+      font-family: var(--font-head);
+      font-size: 1.375rem;
+    }
+
+    .mobile-menu__list {
+      display: grid;
+      gap: var(--s-4);
+    }
+
+    .mobile-menu__top {
+      display: block;
+      padding-block: var(--s-2);
+      font-family: var(--font-head);
+      font-size: 1.375rem;
+      color: var(--c-ink);
+      text-decoration: none;
+    }
+
+    .mobile-menu__sub {
+      display: grid;
+      padding-left: var(--s-3);
+      border-left: var(--border);
+    }
+
+    .mobile-menu__sub a {
+      display: block;
+      padding-block: var(--s-2);
+      min-height: 44px;
+      color: var(--c-ink-2);
+      text-decoration: none;
+    }
+
+    .mobile-menu a[aria-current='page'] {
+      color: var(--c-primary);
+      font-weight: 600;
+    }
+
+    .mobile-menu__foot {
+      margin-top: var(--s-8);
+      padding-top: var(--s-4);
+      border-top: var(--border);
+    }
+
+    @media (width >= 1024px) {
+      .site-header__logo img {
+        width: 168px;
+      }
+
+      .nav-desktop {
+        display: block;
+      }
+
+      .nav-desktop__list {
+        display: flex;
+        align-items: center;
+        gap: var(--s-1);
+      }
+
+      .site-header__actions > .lang-switch,
+      .site-header__cta {
+        display: inline-flex;
+      }
+
+      .menu-trigger,
+      .mobile-menu {
+        display: none;
+      }
+
+      .mobile-menu:popover-open {
+        display: none;
+      }
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-1);
+      min-height: 44px;
+      padding: var(--s-2) var(--s-3);
+      border-radius: var(--radius-pill);
+      color: var(--c-ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+    }
+
+    .nav-link[hidden] {
+      display: none;
+    }
+
+    .nav-link[aria-current] {
+      color: var(--c-primary);
+    }
+
+    .nav-link[aria-expanded='true'] svg {
+      transform: rotate(180deg);
+    }
+
+    @media (hover: hover) {
+      .nav-link:hover {
+        background: var(--c-sand);
+        color: var(--c-ink);
+      }
+    }
+
+    .nav-dd {
+      position: relative;
+    }
+
+    .nav-dd__panel {
+      position: absolute;
+      top: calc(100% + var(--s-2));
+      left: 0;
+      min-width: 280px;
+      padding: var(--s-3);
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-header);
+    }
+
+    .nav-dd__panel a {
+      display: block;
+      padding: var(--s-2) var(--s-3);
+      border-radius: var(--radius-chip);
+      color: var(--c-ink);
+      text-decoration: none;
+    }
+
+    .nav-dd__panel li:first-child a {
+      font-weight: 600;
+    }
+
+    .nav-dd__panel a[aria-current='page'] {
+      color: var(--c-primary);
+    }
+
+    @media (hover: hover) {
+      .nav-dd__panel a:hover {
+        background: var(--c-sand);
+      }
+    }
+  }
+</style>

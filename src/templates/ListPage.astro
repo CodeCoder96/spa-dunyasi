@@ -1,0 +1,150 @@
+---
+// Services list (SAB-07: 4 cards) and guides list.
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Icon from '../components/Icon.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { render } from 'astro:content';
+import { content } from '../lib/content.ts';
+import { serviceHero } from '../lib/site-images.ts';
+import { absolute, breadcrumb, routesOf, type Route } from '../lib/routes.ts';
+import { orgSchema, breadcrumbSchema, itemListSchema, pageSchema } from '../lib/schema.ts';
+import { marked } from '../lib/inline-md.ts';
+import { t } from '../i18n/ui.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const isServices = route.type === 'services';
+const entry = await content('pages', lang, route.key);
+const fm = entry?.data;
+const { Content } = entry ? await render(entry) : { Content: null };
+const items = routesOf(lang, isServices ? 'service' : 'guide');
+const url = absolute(route.path);
+const schema = [
+  ...orgSchema(),
+  pageSchema('CollectionPage', route.title, url, lang),
+  breadcrumbSchema(breadcrumb(route)),
+  itemListSchema(items.map((r) => ({ name: r.title, url: absolute(r.path) })), route.title),
+];
+---
+
+<Base route={route} title={fm?.title ?? route.title} description={fm?.description ?? route.title} schema={schema}>
+  <div class="container page-head">
+    <h1>{fm?.h1 ?? route.title}</h1>
+    {fm?.lead && <p class="lead" set:html={marked(fm.lead, lang)} />}
+  </div>
+
+  <div class="container">
+    <ul role="list" class:list={['list-cards', isServices && 'list-cards--media']}>
+      {
+        items.map((r) => (
+          <li class="card list-card">
+            {isServices && (
+              <div class="list-card__media">
+                <Img src={serviceHero(r.key).src} alt="" sizes="(width >= 1024px) 600px, 100vw" maxWidth={960} />
+              </div>
+            )}
+            <div class="list-card__body">
+              <h2>
+                <a href={r.path}>{r.title}</a>
+              </h2>
+              <span class="list-card__more" aria-hidden="true">
+                {t(lang, isServices ? 'service.read' : 'guide.read')} <Icon name="arrow-right" size={16} />
+              </span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  {
+    Content && (
+      <section class="section">
+        <div class="container">
+          <div class="prose">
+            <Content />
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  @layer components {
+    .page-head {
+      display: grid;
+      gap: var(--s-4);
+      padding-block: var(--s-6) var(--s-8);
+    }
+
+    .list-cards {
+      display: grid;
+      gap: var(--s-5);
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    }
+
+    .list-cards--media {
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+    }
+
+    .list-card {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+    }
+
+    .list-card__media {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+
+    .list-card__media :global(.img) {
+      width: 100%;
+      height: 100%;
+    }
+
+    .list-card__body {
+      display: grid;
+      gap: var(--s-4);
+      padding: var(--s-6);
+      align-content: space-between;
+    }
+
+    .list-card h2 {
+      font-size: 1.5rem;
+    }
+
+    .list-card a {
+      color: var(--c-ink);
+      text-decoration: none;
+    }
+
+    .list-card a::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    .list-card__more {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      color: var(--c-primary);
+      font-weight: 600;
+      font-size: var(--fs-small);
+    }
+
+    @media (hover: hover) {
+      .list-card:hover {
+        border-color: var(--c-primary);
+      }
+    }
+  }
+</style>

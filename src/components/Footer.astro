@@ -1,0 +1,195 @@
+---
+// Footer (MIM-10, DON-03, SEO-10). All contact facts from site.config.ts; all paths from the registry.
+import Icon from './Icon.astro';
+import logoDark from '../assets/logo/logo-dark.svg';
+import { site, settings } from '../../site.config.ts';
+import { routesOf, route as getRoute, type Route } from '../lib/routes.ts';
+import { brandHtml, t } from '../i18n/ui.ts';
+import { mailtoLink, telLink, waLink, waMessage, nbsp } from '../lib/contact.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const categories = routesOf(lang, 'category');
+const services = routesOf(lang, 'service');
+const info = ['sayfa:rehber', 'sayfa:hakkimizda', 'sayfa:iletisim', 'sayfa:sss'].map((id) => getRoute(lang, id));
+const legal = ['sayfa:gizlilik', 'sayfa:kvkk', 'sayfa:cerez'].map((id) => getRoute(lang, id));
+const year = new Date().getFullYear();
+const phoneLabel = { mobil_1: t(lang, 'contact.mobile'), mobil_2: t(lang, 'contact.mobile'), ofis: t(lang, 'contact.office') } as const;
+---
+
+<footer class="site-footer section--dark">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <img src={logoDark.src} width="168" height="32" alt="Spa Dünyası" translate="no" loading="lazy" />
+      <p class="site-footer__authorized">
+        <span set:html={brandHtml(t(lang, 'footer.authorized'))} />:
+        <a href={site.parent.url} translate="no">{t(lang, 'footer.parentLink')}</a>
+      </p>
+      <address class="site-footer__address">{site.address.full}</address>
+    </div>
+
+    <div>
+      <h2 class="site-footer__title">{t(lang, 'nav.contact')}</h2>
+      <ul role="list" class="site-footer__list">
+        {
+          (Object.keys(site.phones) as (keyof typeof site.phones)[]).map((k) => (
+            <li>
+              <a href={telLink(k)} data-phone-line={k} data-cta="footer">
+                <Icon name="phone" size={16} />
+                <span class="site-footer__muted">{phoneLabel[k]}:</span> {nbsp(site.phones[k].display)}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href={waLink(waMessage(lang, { kind: 'general' }))} target="_blank" rel="noopener" data-cta="footer">
+            <Icon name="whatsapp" size={16} />WhatsApp: {nbsp(site.phones.mobil_1.display)}
+          </a>
+        </li>
+        <li>
+          <a href={mailtoLink(t(lang, 'contact.email.subject'))} data-cta="footer"><Icon name="mail" size={16} />{site.email}</a>
+        </li>
+        <li>
+          <a href={site.social.instagram} target="_blank" rel="noopener"><Icon name="instagram" size={16} />Instagram<span class="visually-hidden"> {t(lang, 'cta.newTab')}</span></a>
+        </li>
+        <li>
+          <a href={site.social.facebook} target="_blank" rel="noopener"><Icon name="facebook" size={16} />Facebook<span class="visually-hidden"> {t(lang, 'cta.newTab')}</span></a>
+        </li>
+      </ul>
+      <p class="site-footer__note">{t(lang, 'contact.socialNote')}</p>
+    </div>
+
+    <nav aria-label={t(lang, 'nav.footer')} class="site-footer__nav">
+      <div>
+        <h2 class="site-footer__title">{t(lang, 'nav.categories')}</h2>
+        <ul role="list" class="site-footer__list">
+          {categories.map((c) => <li><a href={c.path}>{c.title}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <h2 class="site-footer__title">{t(lang, 'nav.services')}</h2>
+        <ul role="list" class="site-footer__list">
+          {services.map((s) => <li><a href={s.path}>{s.title}</a></li>)}
+        </ul>
+        <h2 class="site-footer__title site-footer__title--spaced">{t(lang, 'nav.company')}</h2>
+        <ul role="list" class="site-footer__list">
+          {info.map((r) => <li><a href={r.path}>{r.title}</a></li>)}
+        </ul>
+        <h2 class="site-footer__title site-footer__title--spaced">{t(lang, 'nav.legal')}</h2>
+        <ul role="list" class="site-footer__list">
+          {legal.map((r) => <li><a href={r.path}>{r.title}</a></li>)}
+          {
+            settings.ga4MeasurementId && (
+              <li>
+                <button type="button" class="site-footer__linkbtn" data-cookie-prefs>
+                  {t(lang, 'footer.cookiePrefs')}
+                </button>
+              </li>
+            )
+          }
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container site-footer__bottom">
+    <p>© {year} <span translate="no">Spa Dünyası</span>. {t(lang, 'footer.rights')}</p>
+  </div>
+</footer>
+
+<style>
+  @layer components {
+    .site-footer {
+      padding-block: var(--s-16) var(--s-8);
+      font-size: var(--fs-small);
+    }
+
+    .site-footer a,
+    .site-footer__linkbtn {
+      color: var(--c-bg);
+      text-decoration: none;
+    }
+
+    .site-footer__grid {
+      display: grid;
+      gap: var(--s-10);
+    }
+
+    .site-footer__brand img {
+      width: 168px;
+      height: auto;
+      margin-bottom: var(--s-4);
+    }
+
+    .site-footer__authorized a {
+      text-decoration: underline;
+    }
+
+    .site-footer__address {
+      margin-top: var(--s-3);
+      font-style: normal;
+      opacity: 0.85;
+    }
+
+    .site-footer__title {
+      font-family: var(--font-body);
+      font-size: var(--fs-small);
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-bottom: var(--s-3);
+      opacity: 0.75;
+    }
+
+    .site-footer__title--spaced {
+      margin-top: var(--s-6);
+    }
+
+    .site-footer__list {
+      display: grid;
+      gap: var(--s-1);
+    }
+
+    .site-footer__list a,
+    .site-footer__linkbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      min-height: 44px;
+      font-size: var(--fs-small);
+    }
+
+    .site-footer__muted,
+    .site-footer__note {
+      opacity: 0.75;
+    }
+
+    .site-footer__nav {
+      display: grid;
+      gap: var(--s-10);
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    @media (hover: hover) {
+      .site-footer a:hover,
+      .site-footer__linkbtn:hover {
+        color: var(--c-bg);
+        text-decoration: underline;
+      }
+    }
+
+    .site-footer__bottom {
+      margin-top: var(--s-12);
+      padding-top: var(--s-6);
+      border-top: 1px solid var(--c-ink-2);
+      opacity: 0.85;
+    }
+
+    @media (width >= 1024px) {
+      .site-footer__grid {
+        grid-template-columns: 1.2fr 1fr 1.6fr;
+      }
+    }
+  }
+</style>

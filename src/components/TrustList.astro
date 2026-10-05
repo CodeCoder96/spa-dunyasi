@@ -1,0 +1,56 @@
+---
+// Trust items: only §4 facts (SAB-01, SAB-02).
+import Icon from './Icon.astro';
+import { brandHtml, t, type Lang } from '../i18n/ui.ts';
+
+interface Props {
+  lang: Lang;
+  variant?: 'list' | 'badges';
+}
+const { lang, variant = 'list' } = Astro.props;
+const items = [
+  { icon: 'shield', key: 'trust.warranty' },
+  { icon: 'truck', key: 'trust.delivery' },
+  { icon: 'badge', key: 'trust.authorized' },
+] as const;
+---
+
+<ul role="list" class:list={['trust', `trust--${variant}`]}>
+  {
+    items.map((it) => (
+      <li>
+        <Icon name={it.icon} size={20} />
+        <span set:html={brandHtml(t(lang, it.key))} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  @layer components {
+    .trust {
+      display: grid;
+      gap: var(--s-2);
+      font-size: var(--fs-small);
+      color: var(--c-ink-2);
+    }
+
+    .trust li {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+    }
+
+    .trust :global(svg) {
+      color: var(--c-primary);
+      flex: none;
+    }
+
+    .trust--badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2) var(--s-5);
+      color: var(--c-ink);
+    }
+  }
+</style>

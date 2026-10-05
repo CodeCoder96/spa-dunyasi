@@ -1,0 +1,12 @@
+{
+  "id": "kal-04-html",
+  "title": "html-validate, tek H1, boş alt, yer tutucu metin, yasaklı ifade (HTML)",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "pages": 186
+  },
+  "ms": 8170,
+  "ok": true,
+  "at": "2026-10-03T20:37:45.078Z"
+}

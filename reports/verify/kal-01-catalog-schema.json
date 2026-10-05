@@ -1,0 +1,12 @@
+{
+  "id": "kal-01-catalog-schema",
+  "title": "Katalog Zod şeması",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "products": 62
+  },
+  "ms": 21,
+  "ok": true,
+  "at": "2026-10-03T20:37:31.356Z"
+}

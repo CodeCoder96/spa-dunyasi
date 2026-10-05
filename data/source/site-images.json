@@ -1,0 +1,32 @@
+{
+  "home-hero": {
+    "sourceUrl": "https://www.spaworld.com.tr/wp-content/uploads/2022/08/hamam2-scaled.webp",
+    "width": 2560,
+    "height": 1884
+  },
+  "hizmet-hamam": {
+    "sourceUrl": "https://www.spaworld.com.tr/wp-content/uploads/2022/08/Hamam1.webp",
+    "width": 1278,
+    "height": 667
+  },
+  "hizmet-sauna": {
+    "sourceUrl": "https://www.spaworld.com.tr/wp-content/uploads/2023/02/Sauna-2.webp",
+    "width": 2560,
+    "height": 1709
+  },
+  "hizmet-buhar-odasi": {
+    "sourceUrl": "https://www.spaworld.com.tr/wp-content/uploads/2022/08/Buhar-Odasi-2-1.webp",
+    "width": 1920,
+    "height": 1200
+  },
+  "hizmet-havuz": {
+    "sourceUrl": "https://www.spaworld.com.tr/wp-content/uploads/2023/02/Ana-Resim.webp",
+    "width": 1600,
+    "height": 1066
+  },
+  "rehber-islak-alan": {
+    "sourceUrl": "https://www.spaworld.com.tr/wp-content/uploads/2022/08/Buhar-odasi-3-1-scaled.webp",
+    "width": 2560,
+    "height": 1920
+  }
+}

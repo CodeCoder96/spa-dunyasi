@@ -1,0 +1,384 @@
+---
+// Product page (SAB-02, ICR-05, ICR-06, SEO-09, TAS-14). Specs/options from the catalog only.
+import Base from '../layouts/Base.astro';
+import Gallery from '../components/Gallery.astro';
+import SpecTable from '../components/SpecTable.astro';
+import Faq from '../components/Faq.astro';
+import ProductCard from '../components/ProductCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import TrustList from '../components/TrustList.astro';
+import Icon from '../components/Icon.astro';
+import logoLight from '../assets/logo/logo-light.svg';
+import { render } from 'astro:content';
+import { getProduct, dimensionChips } from '../lib/catalog.ts';
+import { CATEGORY_META } from '../lib/categories.ts';
+import { content } from '../lib/content.ts';
+import { asset, buildImage } from '../lib/images.ts';
+import { relatedProducts, CATEGORY_GUIDES } from '../lib/related.ts';
+import { absolute, route as getRoute, breadcrumb, type Route } from '../lib/routes.ts';
+import { productSchema, breadcrumbSchema, faqSchema, orgSchema } from '../lib/schema.ts';
+import { marked } from '../lib/inline-md.ts';
+import { telLink, waLink, waMessage } from '../lib/contact.ts';
+import { t } from '../i18n/ui.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const p = getProduct(route.key);
+const entry = await content('products', lang, p.code);
+const fm = entry?.data;
+const { Content } = entry ? await render(entry) : { Content: null };
+const name = p.name[lang];
+const url = absolute(route.path);
+const wa = { kind: 'product', name, code: p.code, url } as const;
+const chips = dimensionChips(p, lang, 3);
+const related = relatedProducts(p, fm?.related);
+const guideKeys = (fm?.relatedGuides ?? CATEGORY_GUIDES[p.category]).slice(0, 2);
+const guides = guideKeys.map((k) => getRoute(lang, `rehber:${k}`));
+const catRoute = getRoute(lang, `kategori:${p.category}`);
+const gallerySizes = '(width >= 1280px) 680px, (width >= 1024px) 55vw, 100vw';
+const first = p.images[0] ? await buildImage(asset(p.images[0].file), 1600) : null;
+const title = fm?.title ?? `${name} (${p.code})`;
+const description = fm?.description ?? `${name}: ${t(lang, 'product.specs').toLocaleLowerCase(lang === 'tr' ? 'tr-TR' : 'en-GB')}. ${t(lang, 'cta.whatsapp')}.`;
+const schema = [
+  ...orgSchema(),
+  productSchema(p, lang, fm?.description ?? description, url),
+  breadcrumbSchema(breadcrumb(route)),
+  ...(fm?.faq?.length ? [faqSchema(fm.faq, lang)] : []),
+];
+---
+
+<Base
+  route={route}
+  title={title}
+  description={description}
+  wa={wa}
+  schema={schema}
+  preload={first ? { srcset: first.avif, sizes: gallerySizes } : undefined}
+  ogImage={{ path: `/og/urun-${p.code.toLowerCase()}.jpg`, alt: p.images[0]?.alt[lang] ?? name }}
+>
+  <div class="print-only print-head">
+    <img src={logoLight.src} width="168" height="32" alt="Spa Dünyası" />
+  </div>
+
+  <section class="container product-top">
+    <Gallery images={p.images} lang={lang} sizes={gallerySizes} />
+
+    <div class="product-panel">
+      <a class="tag product-panel__cat no-print" href={catRoute.path}>{CATEGORY_META[p.category].name[lang]}</a>
+      <h1 translate="no">{name}</h1>
+      <p class="product-panel__code"><span>{t(lang, 'product.code')}:</span> <strong class="code" translate="no">{p.code}</strong></p>
+      {fm?.intro && <p class="lead" set:html={marked(fm.intro, lang)} />}
+      {
+        chips.length > 0 && (
+          <ul role="list" class="product-panel__chips">
+            {chips.map((c) => (
+              <li class="chip">{c}</li>
+            ))}
+          </ul>
+        )
+      }
+      <div class="product-panel__actions no-print">
+        <a class="btn" href={waLink(waMessage(lang, wa))} target="_blank" rel="noopener" data-cta="product_main">
+          <Icon name="whatsapp" />{t(lang, 'cta.whatsapp')}
+        </a>
+        <div class="product-panel__quote" hidden data-quote-form>
+          <label class="visually-hidden" for={`qty-${p.code}`}>{t(lang, 'quote.qty')}</label>
+          <input class="product-panel__qty" id={`qty-${p.code}`} type="text" inputmode="numeric" pattern="[0-9]*" value="1" data-quote-qty />
+          <button type="button" class="btn btn--ghost" data-quote-add={p.code} data-cta="product_main">
+            <Icon name="plus" />{t(lang, 'quote.add')}
+          </button>
+        </div>
+        <a class="btn btn--ghost" href={telLink()} data-cta="product_main" data-phone-line="mobil_1">
+          <Icon name="phone" />{t(lang, 'cta.call')}
+        </a>
+      </div>
+      <TrustList lang={lang} />
+    </div>
+  </section>
+
+  {
+    fm?.highlights && (
+      <section class="container product-section" aria-labelledby="hl-title">
+        <h2 id="hl-title">{t(lang, 'product.highlights')}</h2>
+        <ul role="list" class="check-list product-highlights">
+          {fm.highlights.map((h) => (
+            <li set:html={marked(h, lang)} />
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    Content && (
+      <section class="container product-section" aria-label={t(lang, 'product.description')}>
+        <div class="prose">
+          <Content />
+        </div>
+      </section>
+    )
+  }
+
+  <section class="container product-section product-specs">
+    <SpecTable product={p} lang={lang} />
+    {
+      p.features.length > 0 && (
+        <section class="product-features" aria-labelledby="features-title">
+          <h2 id="features-title">{t(lang, 'product.features')}</h2>
+          <ul role="list" class="check-list">
+            {p.features.map((f) => (
+              <li>{f[lang]}</li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </section>
+
+  <section class="container product-section product-price" aria-labelledby="price-title">
+    <div class="product-price__box">
+      <h2 id="price-title">{t(lang, 'product.priceTitle', { name })}</h2>
+      {fm?.price ? <p set:html={marked(fm.price, lang)} /> : <p>{t(lang, 'product.priceText', { name })}</p>}
+      <p class="product-price__note">{t(lang, 'trust.warrantyNote')}</p>
+      <div class="product-price__actions no-print">
+        <a class="btn" href={waLink(waMessage(lang, wa))} target="_blank" rel="noopener" data-cta="inline">
+          <Icon name="whatsapp" />{t(lang, 'cta.whatsapp')}
+        </a>
+        <a class="btn btn--ghost" href={telLink()} data-cta="inline" data-phone-line="mobil_1"><Icon name="phone" />{t(lang, 'cta.call')}</a>
+      </div>
+    </div>
+  </section>
+
+  {
+    fm?.faq && (
+      <div class="container product-section">
+        <Faq items={fm.faq} title={t(lang, 'product.faq')} lang={lang} />
+      </div>
+    )
+  }
+
+  <section class="container product-section no-print" aria-labelledby="related-title">
+    <h2 id="related-title">{t(lang, 'product.related')}</h2>
+    <div class="grid-cards">
+      {related.map((r) => <ProductCard product={r} lang={lang} />)}
+    </div>
+    <div class="product-guides">
+      <h3>{t(lang, 'product.relatedGuide')}</h3>
+      <ul role="list">
+        {
+          guides.map((g) => (
+            <li>
+              <a href={g.path}>{g.title}</a>
+            </li>
+          ))
+        }
+        <li><a href={catRoute.path}>{catRoute.title}</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="print-only print-foot">
+    <p>{t(lang, 'product.printUrl')}: {url}</p>
+  </div>
+
+  <CtaBand lang={lang} wa={wa} />
+</Base>
+
+<style>
+  @layer components {
+    .product-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-8);
+      padding-block: var(--s-6) var(--s-12);
+    }
+
+    .product-panel {
+      display: grid;
+      gap: var(--s-4);
+      align-content: start;
+    }
+
+    .product-panel__cat {
+      text-decoration: none;
+      justify-self: start;
+      min-height: 24px;
+    }
+
+    .product-panel h1 {
+      font-size: clamp(2rem, 1.6rem + 1.8vw, 3rem);
+    }
+
+    .product-panel__code {
+      color: var(--c-ink-2);
+      font-size: var(--fs-small);
+    }
+
+    .product-panel__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+    }
+
+    .product-panel__actions {
+      display: grid;
+      gap: var(--s-3);
+      margin-top: var(--s-2);
+    }
+
+    .product-panel__quote {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: var(--s-2);
+    }
+
+    .product-panel__quote[hidden] {
+      display: none;
+    }
+
+    .product-panel__qty {
+      height: 48px;
+      text-align: center;
+      border: 1px solid var(--c-ink-2);
+      border-radius: var(--radius-pill);
+      background: var(--c-surface);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .product-section {
+      padding-block: var(--s-8);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-5);
+    }
+
+    .product-section > h2 {
+      font-size: var(--fs-h3);
+    }
+
+    .product-highlights {
+      max-width: var(--measure);
+    }
+
+    .product-specs {
+      gap: var(--s-10);
+    }
+
+    .product-features {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-4);
+    }
+
+    .product-features h2 {
+      font-size: var(--fs-h3);
+    }
+
+    .product-features .check-list {
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+      max-width: 900px;
+    }
+
+    .product-price__box {
+      display: grid;
+      gap: var(--s-3);
+      padding: var(--s-6);
+      max-width: 820px;
+      background: var(--c-sand);
+      border-radius: var(--radius-card);
+    }
+
+    .product-price__box h2 {
+      font-size: var(--fs-h3);
+    }
+
+    .product-price__note {
+      color: var(--c-ink-2);
+      font-size: var(--fs-small);
+    }
+
+    .product-price__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      margin-top: var(--s-2);
+    }
+
+    .product-guides {
+      margin-top: var(--s-6);
+      display: grid;
+      gap: var(--s-2);
+    }
+
+    .product-guides h3 {
+      font-size: var(--fs-h4);
+      font-family: var(--font-body);
+      font-weight: 600;
+    }
+
+    .product-guides ul {
+      display: grid;
+      gap: var(--s-1);
+    }
+
+    .product-guides a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+    }
+
+    @media (width >= 768px) {
+      .product-panel__actions {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product-panel__actions > .btn:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (width >= 1024px) {
+      .product-top {
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: var(--s-12);
+      }
+
+      .product-specs {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        align-items: start;
+      }
+    }
+
+    .print-only {
+      display: none;
+    }
+
+    @media print {
+      .print-only {
+        display: block;
+      }
+
+      .print-head img {
+        width: 180px;
+        height: auto;
+        margin-bottom: 12pt;
+      }
+
+      .product-top {
+        grid-template-columns: 1fr;
+        padding-block: 0;
+      }
+
+      .product-section {
+        padding-block: 8pt;
+      }
+
+      .print-foot {
+        margin-top: 12pt;
+      }
+    }
+  }
+</style>

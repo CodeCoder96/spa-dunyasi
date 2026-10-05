@@ -1,0 +1,12 @@
+{
+  "id": "kay-23-csv",
+  "title": "CSV: ';' ayraç, UTF-8 BOM",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "size": 14447
+  },
+  "ms": 9,
+  "ok": true,
+  "at": "2026-10-03T20:37:31.654Z"
+}

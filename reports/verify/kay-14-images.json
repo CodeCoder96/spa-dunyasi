@@ -1,0 +1,14 @@
+{
+  "id": "kay-14-images",
+  "title": "Görseller: dosya, boyut, hash, tekrar ve Uranus kontrolü",
+  "errors": [],
+  "warnings": [
+    "SD-052: aynı görsel SD-051 ürününde de var"
+  ],
+  "info": {
+    "images": 279
+  },
+  "ms": 255,
+  "ok": true,
+  "at": "2026-10-03T20:37:31.637Z"
+}

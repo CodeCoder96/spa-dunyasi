@@ -1,0 +1,934 @@
+{
+  "id": "kal-08-content",
+  "title": "Uzunluklar, title/description, ana kelime tekilliği",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "entries": 184,
+    "words": [
+      {
+        "path": "src/content/products/tr/SD-001.md",
+        "words": 353,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-002.md",
+        "words": 342,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-003.md",
+        "words": 352,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-004.md",
+        "words": 323,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-005.md",
+        "words": 357,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-006.md",
+        "words": 342,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-007.md",
+        "words": 341,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-008.md",
+        "words": 350,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-009.md",
+        "words": 344,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-010.md",
+        "words": 332,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-011.md",
+        "words": 341,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-012.md",
+        "words": 349,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-013.md",
+        "words": 338,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-014.md",
+        "words": 334,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-015.md",
+        "words": 320,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-016.md",
+        "words": 319,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-017.md",
+        "words": 357,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-018.md",
+        "words": 327,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-019.md",
+        "words": 315,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-020.md",
+        "words": 337,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-021.md",
+        "words": 331,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-022.md",
+        "words": 359,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-023.md",
+        "words": 330,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-024.md",
+        "words": 310,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-025.md",
+        "words": 301,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-026.md",
+        "words": 341,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-027.md",
+        "words": 310,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-028.md",
+        "words": 322,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-029.md",
+        "words": 329,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-030.md",
+        "words": 331,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-031.md",
+        "words": 320,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-032.md",
+        "words": 305,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-033.md",
+        "words": 358,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-034.md",
+        "words": 334,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-035.md",
+        "words": 344,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-036.md",
+        "words": 335,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-037.md",
+        "words": 340,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-038.md",
+        "words": 335,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-039.md",
+        "words": 338,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-040.md",
+        "words": 334,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-041.md",
+        "words": 326,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-042.md",
+        "words": 325,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-043.md",
+        "words": 365,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-044.md",
+        "words": 364,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-045.md",
+        "words": 336,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-046.md",
+        "words": 349,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-047.md",
+        "words": 342,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-048.md",
+        "words": 329,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-049.md",
+        "words": 330,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-050.md",
+        "words": 334,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-051.md",
+        "words": 314,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-052.md",
+        "words": 327,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-053.md",
+        "words": 339,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-054.md",
+        "words": 325,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-055.md",
+        "words": 332,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-056.md",
+        "words": 335,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-057.md",
+        "words": 337,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-058.md",
+        "words": 335,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/tr/SD-059.md",
+        "words": 351,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-060.md",
+        "words": 326,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-061.md",
+        "words": 350,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/tr/SD-062.md",
+        "words": 332,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-001.md",
+        "words": 460,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-002.md",
+        "words": 407,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-003.md",
+        "words": 427,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-004.md",
+        "words": 433,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-005.md",
+        "words": 437,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-006.md",
+        "words": 443,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-007.md",
+        "words": 433,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-008.md",
+        "words": 400,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-009.md",
+        "words": 426,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-010.md",
+        "words": 434,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-011.md",
+        "words": 425,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-012.md",
+        "words": 439,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-013.md",
+        "words": 410,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-014.md",
+        "words": 440,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-015.md",
+        "words": 443,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-016.md",
+        "words": 441,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-017.md",
+        "words": 475,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-018.md",
+        "words": 407,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-019.md",
+        "words": 429,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-020.md",
+        "words": 428,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-021.md",
+        "words": 438,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-022.md",
+        "words": 450,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-023.md",
+        "words": 414,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-024.md",
+        "words": 340,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-025.md",
+        "words": 397,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-026.md",
+        "words": 431,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-027.md",
+        "words": 382,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-028.md",
+        "words": 381,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-029.md",
+        "words": 407,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-030.md",
+        "words": 420,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-031.md",
+        "words": 376,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-032.md",
+        "words": 331,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-033.md",
+        "words": 472,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-034.md",
+        "words": 418,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-035.md",
+        "words": 432,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-036.md",
+        "words": 414,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-037.md",
+        "words": 420,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-038.md",
+        "words": 429,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-039.md",
+        "words": 452,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-040.md",
+        "words": 412,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-041.md",
+        "words": 413,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-042.md",
+        "words": 411,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-043.md",
+        "words": 408,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-044.md",
+        "words": 397,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-045.md",
+        "words": 400,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-046.md",
+        "words": 396,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-047.md",
+        "words": 435,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-048.md",
+        "words": 381,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-049.md",
+        "words": 368,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-050.md",
+        "words": 349,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-051.md",
+        "words": 380,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-052.md",
+        "words": 367,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-053.md",
+        "words": 444,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-054.md",
+        "words": 422,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-055.md",
+        "words": 444,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-056.md",
+        "words": 447,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-057.md",
+        "words": 430,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-058.md",
+        "words": 436,
+        "faq": 2
+      },
+      {
+        "path": "src/content/products/en/SD-059.md",
+        "words": 432,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-060.md",
+        "words": 388,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-061.md",
+        "words": 437,
+        "faq": 3
+      },
+      {
+        "path": "src/content/products/en/SD-062.md",
+        "words": 447,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/tr/aksesuar.md",
+        "words": 278,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/tr/bakim-ve-pedikur-koltuklari.md",
+        "words": 284,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/tr/dinlenme-yataklari.md",
+        "words": 319,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/tr/havlu-ve-sterilizatorler.md",
+        "words": 277,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/tr/islak-alan.md",
+        "words": 277,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/tr/manikur.md",
+        "words": 263,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/tr/masaj-yataklari.md",
+        "words": 281,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/tr/sicak-tas-ve-isiticilar.md",
+        "words": 282,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/en/aksesuar.md",
+        "words": 336,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/en/bakim-ve-pedikur-koltuklari.md",
+        "words": 357,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/en/dinlenme-yataklari.md",
+        "words": 405,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/en/havlu-ve-sterilizatorler.md",
+        "words": 329,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/en/islak-alan.md",
+        "words": 330,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/en/manikur.md",
+        "words": 326,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/en/masaj-yataklari.md",
+        "words": 337,
+        "faq": 3
+      },
+      {
+        "path": "src/content/categories/en/sicak-tas-ve-isiticilar.md",
+        "words": 339,
+        "faq": 3
+      },
+      {
+        "path": "src/content/services/tr/buhar-odasi.md",
+        "words": 647,
+        "faq": 4
+      },
+      {
+        "path": "src/content/services/tr/hamam.md",
+        "words": 667,
+        "faq": 4
+      },
+      {
+        "path": "src/content/services/tr/havuz.md",
+        "words": 644,
+        "faq": 3
+      },
+      {
+        "path": "src/content/services/tr/sauna.md",
+        "words": 668,
+        "faq": 4
+      },
+      {
+        "path": "src/content/services/en/buhar-odasi.md",
+        "words": 779,
+        "faq": 4
+      },
+      {
+        "path": "src/content/services/en/hamam.md",
+        "words": 814,
+        "faq": 4
+      },
+      {
+        "path": "src/content/services/en/havuz.md",
+        "words": 812,
+        "faq": 3
+      },
+      {
+        "path": "src/content/services/en/sauna.md",
+        "words": 850,
+        "faq": 4
+      },
+      {
+        "path": "src/content/guides/tr/cilt-bakim-koltugu-secimi.md",
+        "words": 1258,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/tr/dinlenme-yatagi-secimi.md",
+        "words": 1348,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/tr/hamam-sauna-buhar.md",
+        "words": 1323,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/tr/havlu-isitici-kullanimi.md",
+        "words": 1295,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/tr/masaj-yatagi-secimi.md",
+        "words": 1253,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/tr/pedikur-koltugu-secimi.md",
+        "words": 1246,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/tr/sicak-tas-ekipmanlari.md",
+        "words": 1260,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/tr/spa-ekipman-listesi.md",
+        "words": 1280,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/en/cilt-bakim-koltugu-secimi.md",
+        "words": 1243,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/en/dinlenme-yatagi-secimi.md",
+        "words": 1325,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/en/hamam-sauna-buhar.md",
+        "words": 1556,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/en/havlu-isitici-kullanimi.md",
+        "words": 1446,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/en/masaj-yatagi-secimi.md",
+        "words": 1286,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/en/pedikur-koltugu-secimi.md",
+        "words": 1340,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/en/sicak-tas-ekipmanlari.md",
+        "words": 1440,
+        "faq": 0
+      },
+      {
+        "path": "src/content/guides/en/spa-ekipman-listesi.md",
+        "words": 1554,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/tr/anasayfa.md",
+        "words": 391,
+        "faq": 5
+      },
+      {
+        "path": "src/content/pages/tr/cerez.md",
+        "words": 62,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/tr/gizlilik.md",
+        "words": 243,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/tr/hakkimizda.md",
+        "words": 312,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/tr/hizmetler.md",
+        "words": 68,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/tr/iletisim.md",
+        "words": 64,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/tr/kvkk.md",
+        "words": 297,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/tr/rehber.md",
+        "words": 12,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/tr/sss.md",
+        "words": 16,
+        "faq": 10
+      },
+      {
+        "path": "src/content/pages/tr/urunler.md",
+        "words": 88,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/en/anasayfa.md",
+        "words": 407,
+        "faq": 5
+      },
+      {
+        "path": "src/content/pages/en/cerez.md",
+        "words": 82,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/en/gizlilik.md",
+        "words": 303,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/en/hakkimizda.md",
+        "words": 345,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/en/hizmetler.md",
+        "words": 93,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/en/iletisim.md",
+        "words": 89,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/en/kvkk.md",
+        "words": 374,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/en/rehber.md",
+        "words": 13,
+        "faq": 0
+      },
+      {
+        "path": "src/content/pages/en/sss.md",
+        "words": 20,
+        "faq": 10
+      },
+      {
+        "path": "src/content/pages/en/urunler.md",
+        "words": 105,
+        "faq": 0
+      }
+    ]
+  },
+  "ms": 0,
+  "ok": true,
+  "at": "2026-10-03T20:37:33.818Z"
+}

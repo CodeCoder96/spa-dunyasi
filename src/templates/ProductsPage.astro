@@ -1,0 +1,141 @@
+---
+// All products (SAB-06). Without JS each chip links to its category page; with JS chips filter in place
+// (aria-pressed, hidden cards, state in the URL hash, live count).
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { products } from '../lib/catalog.ts';
+import { content } from '../lib/content.ts';
+import { render } from 'astro:content';
+import { absolute, breadcrumb, href, routesOf, type Route } from '../lib/routes.ts';
+import { orgSchema, breadcrumbSchema, itemListSchema, pageSchema } from '../lib/schema.ts';
+import { marked } from '../lib/inline-md.ts';
+import { t } from '../i18n/ui.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const entry = await content('pages', lang, 'urunler');
+const fm = entry?.data;
+const { Content } = entry ? await render(entry) : { Content: null };
+const categories = routesOf(lang, 'category');
+const url = absolute(route.path);
+const schema = [
+  ...orgSchema(),
+  pageSchema('CollectionPage', route.title, url, lang),
+  breadcrumbSchema(breadcrumb(route)),
+  itemListSchema(products.map((p) => ({ name: p.name[lang], url: absolute(href(lang, `urun:${p.code}`)) })), route.title),
+];
+---
+
+<Base route={route} title={fm?.title ?? route.title} description={fm?.description ?? route.title} schema={schema}>
+  <div class="container page-head">
+    <h1>{fm?.h1 ?? route.title}</h1>
+    {fm?.lead && <p class="lead" set:html={marked(fm.lead, lang)} />}
+  </div>
+
+  <div class="container">
+    <nav class="filter" aria-label={t(lang, 'products.filter')} data-filter>
+      <ul role="list" class="filter__chips">
+        <li>
+          <a class="filter__chip" href={route.path} data-filter-chip="" aria-current="page">{t(lang, 'products.all')}</a>
+        </li>
+        {
+          categories.map((c) => (
+            <li>
+              <a class="filter__chip" href={c.path} data-filter-chip={c.slug} data-filter-category={c.key}>
+                {c.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="filter__count" aria-live="polite" data-filter-count data-template={t(lang, 'products.showing', { n: '{n}' })}>
+        {t(lang, 'products.showing', { n: products.length })}
+      </p>
+    </nav>
+    <div class="grid-cards" data-filter-grid>
+      {products.map((p) => <ProductCard product={p} lang={lang} headingLevel="h2" />)}
+    </div>
+  </div>
+
+  {
+    Content && (
+      <section class="section">
+        <div class="container">
+          <div class="prose">
+            <Content />
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <CtaBand lang={lang} />
+</Base>
+
+<script>
+  import '../scripts/filter.ts';
+</script>
+
+<style>
+  @layer components {
+    .page-head {
+      display: grid;
+      gap: var(--s-4);
+      padding-block: var(--s-6) var(--s-6);
+    }
+
+    .filter {
+      display: grid;
+      gap: var(--s-3);
+      margin-bottom: var(--s-6);
+    }
+
+    .filter__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+    }
+
+    .filter__chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: var(--s-2) var(--s-4);
+      border-radius: var(--radius-pill);
+      border: var(--border);
+      background: var(--c-surface);
+      color: var(--c-ink);
+      text-decoration: none;
+      font-size: var(--fs-small);
+      font-weight: 500;
+    }
+
+    .filter__chip[aria-pressed='true'],
+    .filter__chip[aria-current='page'] {
+      background: var(--c-ink);
+      border-color: var(--c-ink);
+      color: var(--c-bg);
+    }
+
+    @media (hover: hover) {
+      .filter__chip:hover {
+        border-color: var(--c-ink);
+        color: var(--c-ink);
+      }
+
+      .filter__chip[aria-pressed='true']:hover,
+      .filter__chip[aria-current='page']:hover {
+        color: var(--c-bg);
+      }
+    }
+
+    .filter__count {
+      color: var(--c-ink-2);
+      font-size: var(--fs-small);
+    }
+  }
+</style>

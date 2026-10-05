@@ -1,0 +1,16 @@
+{
+  "id": "kal-06-content",
+  "title": "Site içi benzerlik: 5-gram Jaccard ≤ 0,20",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "entries": 184,
+    "maxJaccard": {
+      "v": 0.07854630715123095,
+      "pair": "src/content/pages/en/anasayfa.md ~ src/content/pages/en/hakkimizda.md"
+    }
+  },
+  "ms": 0,
+  "ok": true,
+  "at": "2026-10-03T20:37:33.816Z"
+}

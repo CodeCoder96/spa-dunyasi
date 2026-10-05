@@ -1,0 +1,7 @@
+{
+  "_doc": "Manual image decisions (KAY-09, KAY-16). exclude: by source file name per product key. fit/position overrides by output index. Auto-exclusion of images repeated on >=3 product pages (exact SHA-256 or dHash distance <= 6) happens in the build script and is reported.",
+  "exclude": {
+    "base-x-masaj-yatagi": [{ "file": "basew.webp", "reason": "Dosya adı ve görünüm Base W modelini gösteriyor; Base W sayfasında zaten var." }]
+  },
+  "overrides": {}
+}

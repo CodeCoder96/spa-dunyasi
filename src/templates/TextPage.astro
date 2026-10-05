@@ -1,0 +1,199 @@
+---
+// About, contact, FAQ, legal pages and 404 (ICR-09, ICR-10, SAB-09, SAB-10).
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+import Icon from '../components/Icon.astro';
+import { render } from 'astro:content';
+import { content } from '../lib/content.ts';
+import { absolute, breadcrumb, href, routesOf, type Route } from '../lib/routes.ts';
+import { orgSchema, breadcrumbSchema, faqSchema, pageSchema } from '../lib/schema.ts';
+import { marked } from '../lib/inline-md.ts';
+import { waLink, waMessage, nbsp } from '../lib/contact.ts';
+import { site, settings } from '../../site.config.ts';
+import { brandHtml, formatDate, t } from '../i18n/ui.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const is404 = route.type === '404';
+const isLegal = ['privacy', 'kvkk', 'cookies'].includes(route.type);
+const entry = is404 ? null : await content('pages', lang, route.key);
+const fm = entry?.data;
+const { Content } = entry ? await render(entry) : { Content: null };
+const url = absolute(route.path);
+const pageType = route.type === 'about' ? 'AboutPage' : route.type === 'contact' ? 'ContactPage' : 'WebPage';
+const schema = is404
+  ? []
+  : [...orgSchema(), pageSchema(pageType, route.title, url, lang), breadcrumbSchema(breadcrumb(route)), ...(route.type === 'faq' && fm?.faq?.length ? [faqSchema(fm.faq, lang)] : [])];
+const categories = routesOf(lang, 'category');
+---
+
+<Base route={route} title={fm?.title ?? (is404 ? t(lang, '404.title') : route.title)} description={fm?.description ?? t(lang, '404.text')} schema={schema}>
+  <div class="container page-head">
+    <h1 set:html={brandHtml(fm?.h1 ?? (is404 ? t(lang, '404.title') : route.title))} />
+    {fm?.lead && <p class="lead" set:html={marked(fm.lead, lang)} />}
+    {is404 && <p class="lead">{t(lang, '404.text')}</p>}
+  </div>
+
+  {
+    route.type === 'contact' && (
+      <div class="contact-actions container">
+        <a class="btn" href={waLink(waMessage(lang, { kind: 'general' }))} target="_blank" rel="noopener" data-cta="contact_page">
+          <Icon name="whatsapp" />
+          {t(lang, 'cta.whatsapp')}
+        </a>
+      </div>
+    )
+  }
+  {route.type === 'contact' && <ContactBlock lang={lang} showTitle={false} ctaLocation="contact_page" />}
+
+  {
+    Content && (
+      <section class="container text-body">
+        <div class="prose">
+          <Content />
+        </div>
+      </section>
+    )
+  }
+
+  {
+    fm?.faq && (
+      <div class="container text-body">
+        <Faq items={fm.faq} title={route.type === 'faq' ? t(lang, 'faq.list') : t(lang, 'product.faq')} lang={lang} />
+      </div>
+    )
+  }
+
+  {
+    route.type === 'cookies' && (
+      <section class="container text-body prose" aria-labelledby="ga-title">
+        <h2 id="ga-title">{t(lang, 'cookies.analyticsTitle')}</h2>
+        {settings.ga4MeasurementId ? (
+          <>
+            <p>{t(lang, 'cookies.gaIntro')}</p>
+            <table class="cookie-table">
+              <thead>
+                <tr>
+                  <th scope="col">{t(lang, 'cookies.name')}</th>
+                  <th scope="col">{t(lang, 'cookies.purpose')}</th>
+                  <th scope="col">{t(lang, 'cookies.duration')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>_ga</td>
+                  <td>{t(lang, 'cookies.ga')}</td>
+                  <td>{t(lang, 'cookies.twoYears')}</td>
+                </tr>
+                <tr>
+                  <td>_ga_{settings.ga4MeasurementId.replace(/^G-/, '')}</td>
+                  <td>{t(lang, 'cookies.gaSession')}</td>
+                  <td>{t(lang, 'cookies.twoYears')}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>{t(lang, 'cookies.change')}</p>
+          </>
+        ) : (
+          <p>{t(lang, 'cookies.none')}</p>
+        )}
+      </section>
+    )
+  }
+
+  {
+    isLegal && fm?.updated && (
+      <p class="container legal-updated">
+        {t(lang, 'legal.updated')}: <time datetime={fm.updated}>{formatDate(lang, fm.updated)}</time>
+      </p>
+    )
+  }
+
+  {
+    is404 && (
+      <section class="container nf-links" aria-label={t(lang, '404.links')}>
+        <ul role="list">
+          <li>
+            <a href={href(lang, 'sayfa:anasayfa')}>{t(lang, 'nav.home')}</a>
+          </li>
+          <li>
+            <a href={href(lang, 'sayfa:urunler')}>{t(lang, 'nav.allProducts')}</a>
+          </li>
+          {categories.map((c) => (
+            <li>
+              <a href={c.path}>{c.title}</a>
+            </li>
+          ))}
+          <li>
+            <a href={waLink(waMessage(lang, { kind: 'general' }))} target="_blank" rel="noopener" data-cta="inline">
+              WhatsApp: {nbsp(site.phones.mobil_1.display)}
+            </a>
+          </li>
+        </ul>
+      </section>
+    )
+  }
+
+  {(route.type === 'about' || route.type === 'faq') && <CtaBand lang={lang} />}
+</Base>
+
+<style>
+  @layer components {
+    .page-head {
+      display: grid;
+      gap: var(--s-4);
+      padding-block: var(--s-6) var(--s-8);
+    }
+
+    .contact-actions {
+      margin-bottom: calc(-1 * var(--s-8));
+    }
+
+    .text-body {
+      padding-bottom: var(--s-10);
+    }
+
+    .cookie-table {
+      width: 100%;
+      background: var(--c-surface);
+      border: var(--border);
+    }
+
+    .cookie-table th,
+    .cookie-table td {
+      padding: var(--s-2) var(--s-3);
+      border-bottom: var(--border);
+      text-align: left;
+    }
+
+    .legal-updated {
+      color: var(--c-ink-2);
+      font-size: var(--fs-small);
+      padding-bottom: var(--s-12);
+    }
+
+    .nf-links ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+      padding-bottom: var(--s-16);
+    }
+
+    .nf-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: var(--s-2) var(--s-4);
+      border: var(--border);
+      border-radius: var(--radius-pill);
+      background: var(--c-surface);
+      text-decoration: none;
+      color: var(--c-ink);
+    }
+  }
+</style>

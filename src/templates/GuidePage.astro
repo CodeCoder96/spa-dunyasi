@@ -1,0 +1,251 @@
+---
+// Guide page (SAB-08, ICR-07): article layout ≤70ch, summary box, table of contents (sticky on desktop),
+// inline product cards (@kart markers), author "Spa Dünyası" with real dates, related guides, CTA.
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { render } from 'astro:content';
+import { content } from '../lib/content.ts';
+import { absolute, breadcrumb, routesOf, type Route } from '../lib/routes.ts';
+import { orgSchema, breadcrumbSchema, articleSchema } from '../lib/schema.ts';
+import { marked } from '../lib/inline-md.ts';
+import { formatDate, t } from '../i18n/ui.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const entry = await content('guides', lang, route.key);
+const fm = entry?.data;
+const rendered = entry ? await render(entry) : null;
+const Content = rendered?.Content ?? null;
+const toc = (rendered?.headings ?? []).filter((h) => h.depth === 2);
+const url = absolute(route.path);
+const ogPath = `/og/rehber-${route.key}.jpg`;
+const description = fm?.description ?? route.title;
+const schema = [
+  ...orgSchema(),
+  breadcrumbSchema(breadcrumb(route)),
+  ...(fm ? [articleSchema({ headline: route.title, description, url, image: absolute(ogPath), datePublished: fm.datePublished, dateModified: fm.dateModified, lang })] : []),
+];
+const others = routesOf(lang, 'guide').filter((g) => g.id !== route.id).slice(0, 3);
+---
+
+<Base route={route} title={fm?.title ?? route.title} description={description} schema={schema} ogType="article" ogImage={{ path: ogPath, alt: route.title }}>
+  <article class="container guide">
+    <div class="guide__head">
+      <h1>{route.title}</h1>
+      {
+        fm && (
+          <p class="guide__meta">
+            {t(lang, 'guide.author')} <span translate="no">Spa Dünyası</span> · {t(lang, 'guide.published')}: <time datetime={fm.datePublished}>{formatDate(lang, fm.datePublished)}</time>
+            {fm.dateModified !== fm.datePublished && (
+              <>
+                {' '}
+                · {t(lang, 'guide.updated')}: <time datetime={fm.dateModified}>{formatDate(lang, fm.dateModified)}</time>
+              </>
+            )}
+          </p>
+        )
+      }
+    </div>
+
+    <div class="guide__layout">
+      {
+        toc.length > 0 && (
+          <nav class="guide__toc" aria-labelledby="toc-title">
+            <h2 id="toc-title">{t(lang, 'guide.toc')}</h2>
+            <ol>
+              {toc.map((h) => (
+                <li>
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )
+      }
+      <div class="guide__body">
+        {
+          fm?.summary && (
+            <aside class="guide__summary" aria-labelledby="sum-title">
+              <h2 id="sum-title">{t(lang, 'guide.summary')}</h2>
+              <ul class="check-list">
+                {fm.summary.map((s) => (
+                  <li set:html={marked(s, lang)} />
+                ))}
+              </ul>
+            </aside>
+          )
+        }
+        {
+          Content && (
+            <div class="prose guide__prose">
+              <Content />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </article>
+
+  <section class="container guide-others" aria-labelledby="others-title">
+    <h2 id="others-title">{t(lang, 'guide.related')}</h2>
+    <ul role="list">
+      {others.map((g) => <li><a href={g.path}>{g.title}</a></li>)}
+    </ul>
+  </section>
+
+  <CtaBand lang={lang} />
+</Base>
+
+<style>
+  @layer components {
+    .guide {
+      padding-block: var(--s-6) var(--s-8);
+    }
+
+    .guide__head {
+      display: grid;
+      gap: var(--s-4);
+      max-width: var(--measure-article);
+      margin-bottom: var(--s-8);
+    }
+
+    .guide__head h1 {
+      font-size: clamp(2rem, 1.5rem + 2.2vw, 3.25rem);
+    }
+
+    .guide__meta {
+      color: var(--c-ink-2);
+      font-size: var(--fs-small);
+    }
+
+    .guide__layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-8);
+    }
+
+    .guide__toc {
+      align-self: start;
+      padding: var(--s-5);
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      font-size: var(--fs-small);
+    }
+
+    .guide__toc h2 {
+      font-family: var(--font-body);
+      font-size: var(--fs-small);
+      font-weight: 600;
+      margin-bottom: var(--s-2);
+    }
+
+    .guide__toc ol {
+      padding-left: 1.2em;
+      display: grid;
+      gap: var(--s-1);
+    }
+
+    .guide__toc a {
+      display: inline-block;
+      padding-block: var(--s-1);
+    }
+
+    .guide__body {
+      max-width: var(--measure-article);
+      display: grid;
+      gap: var(--s-8);
+    }
+
+    .guide__summary {
+      padding: var(--s-6);
+      background: var(--c-sand);
+      border-radius: var(--radius-card);
+      display: grid;
+      gap: var(--s-3);
+    }
+
+    .guide__summary h2 {
+      font-size: var(--fs-h4);
+      font-family: var(--font-body);
+      font-weight: 600;
+    }
+
+    .guide__prose {
+      max-width: var(--measure-article);
+    }
+
+    .guide__prose :global(.inline-card) {
+      margin-block: var(--s-6);
+    }
+
+    .guide__prose :global(.inline-card__link) {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: var(--s-4);
+      align-items: center;
+      padding: var(--s-3);
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      color: var(--c-ink);
+      text-decoration: none;
+    }
+
+    .guide__prose :global(.inline-card img) {
+      width: 120px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: var(--radius-chip);
+    }
+
+    .guide__prose :global(.inline-card__body) {
+      display: grid;
+      gap: var(--s-1);
+    }
+
+    .guide__prose :global(.inline-card strong) {
+      font-family: var(--font-head);
+      font-weight: 500;
+      font-size: 1.25rem;
+      line-height: 1.25;
+    }
+
+    @media (hover: hover) {
+      .guide__prose :global(.inline-card__link:hover) {
+        border-color: var(--c-primary);
+      }
+    }
+
+    @media (width >= 1024px) {
+      .guide__layout {
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: var(--s-12);
+      }
+
+      .guide__toc {
+        position: sticky;
+        top: calc(var(--header-h) + var(--s-6));
+      }
+    }
+
+    .guide-others {
+      display: grid;
+      gap: var(--s-3);
+      padding-block: var(--s-6) 0;
+    }
+
+    .guide-others h2 {
+      font-size: var(--fs-h3);
+    }
+
+    .guide-others a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+  }
+</style>

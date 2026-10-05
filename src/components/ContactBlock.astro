@@ -1,0 +1,121 @@
+---
+// Contact details block (SAB-01 #9, SAB-09). All values from site.config.ts; no map iframe, no opening hours.
+import Icon from './Icon.astro';
+import { site } from '../../site.config.ts';
+import { t, type Lang } from '../i18n/ui.ts';
+import { mailtoLink, mapsDirections, mapsSearch, telLink, waLink, waMessage, nbsp } from '../lib/contact.ts';
+
+interface Props {
+  lang: Lang;
+  headingLevel?: 'h2' | 'h3';
+  showTitle?: boolean;
+  ctaLocation?: string;
+}
+const { lang, headingLevel = 'h2', showTitle = true, ctaLocation = 'inline' } = Astro.props;
+const H = headingLevel;
+// Item headings sit one level below the block title; without a title they follow the page H1 directly.
+const Item = showTitle ? 'h3' : 'h2';
+const phoneLabel = { mobil_1: t(lang, 'contact.mobile'), mobil_2: t(lang, 'contact.mobile'), ofis: t(lang, 'contact.office') } as const;
+---
+
+<section class="contact-block" aria-labelledby={showTitle ? 'contact-title' : undefined} aria-label={showTitle ? undefined : t(lang, 'nav.contact')}>
+  <div class="container contact-block__grid">
+    {showTitle && <H id="contact-title" class="contact-block__title">{t(lang, 'home.contact')}</H>}
+    <div class="contact-block__item">
+      <Item>{t(lang, 'contact.address')}</Item>
+      <address>{site.address.full}</address>
+      <p class="contact-block__links">
+        <a href={mapsSearch} target="_blank" rel="noopener"><Icon name="map" size={18} />{t(lang, 'contact.openMap')}<span class="visually-hidden"> {t(lang, 'cta.newTab')}</span></a>
+        <a href={mapsDirections} target="_blank" rel="noopener"><Icon name="directions" size={18} />{t(lang, 'contact.directions')}<span class="visually-hidden"> {t(lang, 'cta.newTab')}</span></a>
+      </p>
+    </div>
+    <div class="contact-block__item">
+      <Item>{t(lang, 'contact.phones')}</Item>
+      <ul role="list">
+        {
+          (Object.keys(site.phones) as (keyof typeof site.phones)[]).map((k) => (
+            <li>
+              <a href={telLink(k)} data-phone-line={k} data-cta={ctaLocation}>
+                <span class="contact-block__muted">{phoneLabel[k]}</span> {nbsp(site.phones[k].display)}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a href={waLink(waMessage(lang, { kind: 'general' }))} target="_blank" rel="noopener" data-cta={ctaLocation}>
+            <span class="contact-block__muted">WhatsApp</span> {nbsp(site.phones.mobil_1.display)}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="contact-block__item">
+      <Item>{t(lang, 'contact.email')}</Item>
+      <p><a href={mailtoLink(t(lang, 'contact.email.subject'))} data-cta={ctaLocation}>{site.email}</a></p>
+      <Item class="contact-block__sub">{t(lang, 'contact.social')}</Item>
+      <p class="contact-block__links">
+        <a href={site.social.instagram} target="_blank" rel="noopener"><Icon name="instagram" size={18} />Instagram<span class="visually-hidden"> {t(lang, 'cta.newTab')}</span></a>
+        <a href={site.social.facebook} target="_blank" rel="noopener"><Icon name="facebook" size={18} />Facebook<span class="visually-hidden"> {t(lang, 'cta.newTab')}</span></a>
+      </p>
+      <p class="contact-block__muted">{t(lang, 'contact.socialNote')}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .contact-block {
+      padding-block: var(--section-y);
+    }
+
+    .contact-block__grid {
+      display: grid;
+      gap: var(--s-8);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    }
+
+    .contact-block__title {
+      grid-column: 1 / -1;
+    }
+
+    .contact-block__item {
+      display: grid;
+      gap: var(--s-2);
+      align-content: start;
+    }
+
+    .contact-block__item :is(h2, h3) {
+      font-family: var(--font-body);
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--c-accent);
+      letter-spacing: 0.04em;
+    }
+
+    .contact-block__sub {
+      margin-top: var(--s-3);
+    }
+
+    .contact-block address {
+      font-style: normal;
+    }
+
+    .contact-block ul a,
+    .contact-block__links a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      min-height: 44px;
+    }
+
+    .contact-block__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 var(--s-5);
+    }
+
+    .contact-block__muted {
+      color: var(--c-ink-2);
+      font-size: var(--fs-small);
+    }
+  }
+</style>

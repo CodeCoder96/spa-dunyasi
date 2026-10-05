@@ -1,0 +1,91 @@
+---
+// Fixed mobile CTA bar (DON-04): ≤1023 px, 56-64 px tall + safe area; hidden when a menu/dialog is open
+// or the viewport is shorter than 500 px.
+import Icon from './Icon.astro';
+import { t, type Lang } from '../i18n/ui.ts';
+import { telLink, waLink, waMessage, type WaContext } from '../lib/contact.ts';
+
+interface Props {
+  lang: Lang;
+  wa: WaContext;
+}
+const { lang, wa } = Astro.props;
+---
+
+<div class="mobile-bar no-print" data-mobile-bar>
+  <a class="mobile-bar__btn mobile-bar__btn--wa" href={waLink(waMessage(lang, wa))} target="_blank" rel="noopener" data-cta="mobile_bar">
+    <Icon name="whatsapp" size={22} />{t(lang, 'cta.whatsappShort')}
+  </a>
+  <a class="mobile-bar__btn" href={telLink()} data-cta="mobile_bar" data-phone-line="mobil_1">
+    <Icon name="phone" size={22} />{t(lang, 'cta.callShort')}
+  </a>
+</div>
+
+<style>
+  @layer components {
+    .mobile-bar {
+      position: fixed;
+      inset: auto 0 0;
+      z-index: var(--z-mobile-bar);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--s-2);
+      height: var(--mobile-bar-space);
+      padding: var(--s-2) var(--s-3) calc(var(--s-2) + env(safe-area-inset-bottom));
+      background: var(--c-surface);
+      border-top: var(--border);
+    }
+
+    .mobile-bar__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--s-2);
+      height: 44px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--c-ink-2);
+      color: var(--c-ink);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .mobile-bar__btn--wa {
+      background: var(--c-primary);
+      border-color: var(--c-primary);
+      color: var(--c-on-primary);
+    }
+
+    @media (hover: hover) {
+      .mobile-bar__btn--wa:hover {
+        background: var(--c-primary-hover);
+        color: var(--c-on-primary);
+      }
+    }
+
+    @media (width >= 1024px) {
+      .mobile-bar {
+        display: none;
+      }
+    }
+
+    @media (height < 500px) {
+      .mobile-bar {
+        display: none;
+      }
+    }
+
+    :global(body:has(#mobile-menu:popover-open)) .mobile-bar,
+    :global(body:has(.mobile-menu.is-open)) .mobile-bar,
+    :global(body:has(dialog[open])) .mobile-bar {
+      display: none;
+    }
+  }
+
+  @layer base {
+    @media (height < 500px) {
+      :global(:root) {
+        --mobile-bar-space: 0px;
+      }
+    }
+  }
+</style>

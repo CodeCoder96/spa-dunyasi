@@ -1,0 +1,73 @@
+---
+// Dark CTA band (SAB-01 #9, product/category/service pages) with contact details from site.config.ts.
+import Icon from './Icon.astro';
+import { site } from '../../site.config.ts';
+import { t, type Lang } from '../i18n/ui.ts';
+import { telLink, waLink, waMessage, type WaContext, nbsp } from '../lib/contact.ts';
+
+interface Props {
+  lang: Lang;
+  wa?: WaContext;
+  title?: string;
+  text?: string;
+}
+const { lang, wa = { kind: 'general' }, title = t(lang, 'cta.band.title'), text = t(lang, 'cta.band.text') } = Astro.props;
+---
+
+<section class="cta-band section--dark no-print" aria-labelledby="cta-band-title">
+  <div class="container cta-band__inner">
+    <div class="cta-band__text">
+      <h2 id="cta-band-title">{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="cta-band__actions">
+      <a class="btn btn--light" href={waLink(waMessage(lang, wa))} target="_blank" rel="noopener" data-cta="inline">
+        <Icon name="whatsapp" />{t(lang, 'cta.whatsapp')}
+      </a>
+      <a class="btn btn--outline-light" href={telLink()} data-cta="inline" data-phone-line="mobil_1">
+        <Icon name="phone" />{t(lang, 'cta.call')}: {nbsp(site.phones.mobil_1.display)}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .cta-band {
+      padding-block: var(--s-16);
+      margin-top: var(--s-12);
+    }
+
+    .cta-band__inner {
+      display: grid;
+      gap: var(--s-6);
+      align-items: center;
+    }
+
+    .cta-band__text {
+      display: grid;
+      gap: var(--s-3);
+      max-width: 60ch;
+    }
+
+    .cta-band__text p {
+      opacity: 0.85;
+    }
+
+    .cta-band__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+    }
+
+    @media (width >= 1024px) {
+      .cta-band__inner {
+        grid-template-columns: 1.3fr 1fr;
+      }
+
+      .cta-band__actions {
+        justify-content: flex-end;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,27 @@
+---
+// Picks the template for a registry route (MIM-06).
+import HomePage from './HomePage.astro';
+import ProductsPage from './ProductsPage.astro';
+import CategoryPage from './CategoryPage.astro';
+import ProductPage from './ProductPage.astro';
+import ListPage from './ListPage.astro';
+import ServicePage from './ServicePage.astro';
+import GuidePage from './GuidePage.astro';
+import TextPage from './TextPage.astro';
+import type { Route } from '../lib/routes.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const T = route.type;
+---
+
+{T === 'home' && <HomePage route={route} />}
+{T === 'products' && <ProductsPage route={route} />}
+{T === 'category' && <CategoryPage route={route} />}
+{T === 'product' && <ProductPage route={route} />}
+{(T === 'services' || T === 'guides') && <ListPage route={route} />}
+{T === 'service' && <ServicePage route={route} />}
+{T === 'guide' && <GuidePage route={route} />}
+{['about', 'contact', 'faq', 'privacy', 'kvkk', 'cookies', '404'].includes(T) && <TextPage route={route} />}

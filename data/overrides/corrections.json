@@ -1,0 +1,15 @@
+{
+  "_doc": "Source typos corrected in displayed names/labels (TZK-07, KAY-12). Raw source data is never modified; corrections apply in the catalog/site layer.",
+  "corrections": [
+    { "from": "Podogoly Care Chair", "to": "Podology / Podoloji", "where": "portfolios/podology-care-chair başlığı, /urunlerimiz/, kategori sayfası", "applied": "SD-034 adı: Podoloji Bakım Koltuğu / Podology Care Chair" },
+    { "from": "Ekişpmanları", "to": "Ekipmanları", "where": "ana sayfa ve /hakkimizda/ metni", "applied": "Bu metin sitede kullanılmadı; yalnızca raporlandı." },
+    { "from": "+90 0534 451 88 97", "to": "+90 534 451 88 97", "where": "ana sayfa, about-us, contact-us, kategori sayfaları (footer)", "applied": "site.config.ts phones.mobil_2" },
+    { "from": "LİGHT / LİFE (büyük harf dönüşümü)", "to": "Light / Life", "where": "light-dinlenme-yatagi, manikur-masasi-light, pedikur-light, pedikur-spa-life başlıkları", "applied": "SD-023, SD-033, SD-035, SD-039 adları" },
+    { "from": "URANÜS / VENÜS", "to": "Uranus / Venus", "where": "ürün başlıkları", "applied": "SD-030, SD-031 (v1 ve SPEC yazımı)" },
+    { "from": "Etejer", "to": "Etajer", "where": "portfolios/etejer URL'si ve opsiyon listeleri", "applied": "SD-059 adı ve opsiyonlar" },
+    { "from": "Koruyucu DEri kılıf", "to": "Koruyucu deri kılıf", "where": "evony ve light dinlenme yatağı opsiyonları", "applied": "katalog opsiyonları" },
+    { "from": "Genişik", "to": "Genişlik", "where": "manikur-koltugu teknik tablosu", "applied": "SD-040 teknik tablo etiketi" },
+    { "from": "ayarlanabiir", "to": "ayarlanabilir", "where": "yardimci-urunler büyüteç açıklaması", "applied": "SD-056 özellik metni" },
+    { "from": "AFÜZYONDUŞ", "to": "Afüzyon Duşu", "where": "afüzyon duşu başlıkları", "applied": "SD-053, SD-055 adları" }
+  ]
+}

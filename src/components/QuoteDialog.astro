@@ -1,0 +1,216 @@
+---
+// Quote list panel (DON-05): native <dialog> opened with showModal() by the header counter button.
+// Rendered empty; src/scripts/quote.ts fills rows from localStorage + quote-index.<hash>.json.
+import Icon from './Icon.astro';
+import { t, type Lang } from '../i18n/ui.ts';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<dialog class="quote-dialog no-print" aria-labelledby="quote-title" data-quote-dialog>
+  <div class="quote-dialog__inner">
+    <div class="quote-dialog__head">
+      <h2 id="quote-title">{t(lang, 'quote.open')}</h2>
+      <button type="button" class="quote-dialog__close" data-quote-close>
+        <Icon name="close" size={24} /><span class="visually-hidden">{t(lang, 'quote.close')}</span>
+      </button>
+    </div>
+    <p class="quote-dialog__notice" data-quote-memory hidden>{t(lang, 'quote.memoryOnly')}</p>
+    <p class="quote-dialog__empty" data-quote-empty>{t(lang, 'quote.empty')}</p>
+    <ul role="list" class="quote-dialog__list" data-quote-list></ul>
+    <p class="quote-dialog__error" data-quote-error hidden></p>
+    <div class="quote-dialog__actions" data-quote-actions hidden>
+      <button type="button" class="btn" data-quote-send="whatsapp"><Icon name="whatsapp" />{t(lang, 'quote.sendWhatsapp')}</button>
+      <button type="button" class="btn btn--ghost" data-quote-send="email"><Icon name="mail" />{t(lang, 'quote.sendEmail')}</button>
+      <button type="button" class="btn btn--ghost btn--sm quote-dialog__clear" data-quote-clear data-label={t(lang, 'quote.clear')} data-confirm={t(lang, 'quote.clearConfirm')}>
+        <Icon name="trash" /><span data-clear-label>{t(lang, 'quote.clear')}</span>
+      </button>
+    </div>
+    <template data-quote-row>
+      <li class="quote-row">
+        <span class="quote-row__thumb" data-thumb></span>
+        <span class="quote-row__info">
+          <a class="quote-row__name" data-name></a>
+          <span class="code" data-code translate="no"></span>
+        </span>
+        <span class="quote-row__qty">
+          <button type="button" class="quote-row__step" data-step="-1"><Icon name="minus" size={18} /><span class="visually-hidden">{t(lang, 'quote.decrease')}</span></button>
+          <input type="text" inputmode="numeric" pattern="[0-9]*" class="quote-row__input" data-qty aria-label={t(lang, 'quote.qty')} />
+          <button type="button" class="quote-row__step" data-step="1"><Icon name="plus" size={18} /><span class="visually-hidden">{t(lang, 'quote.increase')}</span></button>
+        </span>
+        <button type="button" class="quote-row__remove" data-remove><Icon name="trash" size={18} /><span class="visually-hidden">{t(lang, 'quote.remove')}</span></button>
+      </li>
+    </template>
+  </div>
+  <p class="visually-hidden" aria-live="polite" data-quote-live></p>
+  <div hidden>
+    <span data-t="open">{t(lang, 'quote.open')}</span>
+    <span data-t="count">{t(lang, 'quote.count')}</span>
+    <span data-t="qty">{t(lang, 'quote.qty')}</span>
+    <span data-t="limit">{t(lang, 'quote.limit')}</span>
+    <span data-t="added">{t(lang, 'quote.announce.added')}</span>
+    <span data-t="qtyChanged">{t(lang, 'quote.announce.qty')}</span>
+    <span data-t="removed">{t(lang, 'quote.announce.removed')}</span>
+    <span data-t="cleared">{t(lang, 'quote.announce.cleared')}</span>
+    <span data-t="tooLong">{t(lang, 'quote.tooLong')}</span>
+    <span data-t="msgIntro">{t(lang, 'quote.message.intro')}</span>
+    <span data-t="msgSource">{t(lang, 'quote.message.source')}</span>
+    <span data-t="subject">{t(lang, 'quote.email.subject')}</span>
+  </div>
+</dialog>
+<p class="visually-hidden no-print" aria-live="polite" data-quote-page-live></p>
+
+<script>
+  import '../scripts/quote.ts';
+</script>
+
+<style>
+  @layer components {
+    .quote-dialog {
+      width: min(100% - 2 * var(--s-4), 560px);
+      max-height: min(90dvh, 760px);
+      margin: auto;
+      border-radius: var(--radius-card);
+      background: var(--c-bg);
+      color: var(--c-ink);
+      box-shadow: var(--shadow-header);
+    }
+
+    .quote-dialog::backdrop {
+      background: var(--c-scrim);
+    }
+
+    .quote-dialog__inner {
+      display: grid;
+      gap: var(--s-4);
+      padding: var(--s-6);
+    }
+
+    .quote-dialog__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--s-4);
+    }
+
+    .quote-dialog__head h2 {
+      font-size: var(--fs-h3);
+    }
+
+    .quote-dialog__close {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-pill);
+    }
+
+    .quote-dialog__notice,
+    .quote-dialog__error {
+      padding: var(--s-3) var(--s-4);
+      border-radius: var(--radius-chip);
+      background: var(--c-sand);
+      font-size: var(--fs-small);
+    }
+
+    .quote-dialog__empty {
+      color: var(--c-ink-2);
+    }
+
+    .quote-dialog__list {
+      display: grid;
+      gap: var(--s-3);
+    }
+
+    .quote-row {
+      display: grid;
+      grid-template-columns: 56px 1fr auto;
+      grid-template-areas: 'thumb info remove' 'thumb qty remove';
+      align-items: center;
+      gap: var(--s-1) var(--s-3);
+      padding: var(--s-3);
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-chip);
+    }
+
+    .quote-row__thumb {
+      grid-area: thumb;
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-chip);
+      overflow: hidden;
+      background: var(--c-sand);
+    }
+
+    .quote-row__thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .quote-row__info {
+      grid-area: info;
+      display: grid;
+    }
+
+    .quote-row__name {
+      font-weight: 600;
+      color: var(--c-ink);
+      overflow-wrap: anywhere;
+    }
+
+    .quote-row__qty {
+      grid-area: qty;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-1);
+    }
+
+    .quote-row__step,
+    .quote-row__remove {
+      display: inline-grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-pill);
+      border: var(--border);
+    }
+
+    .quote-row__remove {
+      grid-area: remove;
+      border: 0;
+    }
+
+    .quote-row__input {
+      width: 3.25em;
+      height: 44px;
+      text-align: center;
+      border: var(--border);
+      border-radius: var(--radius-chip);
+      background: var(--c-surface);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .quote-dialog__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+    }
+
+    .quote-dialog__clear {
+      margin-left: auto;
+    }
+
+    @media (hover: hover) {
+      .quote-dialog__close:hover,
+      .quote-row__step:hover,
+      .quote-row__remove:hover {
+        background: var(--c-sand);
+      }
+    }
+  }
+</style>

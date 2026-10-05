@@ -1,0 +1,74 @@
+# v1 temizlik listesi (TES-05)
+# Üretim: 2026-10-03. Canlı v1 sayfalarından okundu: 18 sayfa.
+# Bu dosyalar yeni sitede kullanılmıyor; yükleme bittikten SONRA public_html içinden silinebilir.
+# DOKUNMAYIN: .well-known/, cgi-bin/, google*.html doğrulama dosyaları.
+
+# Tamamen silinebilecek klasörler:
+/assets/
+
+# Tek tek dosyalar:
+/assets/app.js
+/assets/brand-0.webp
+/assets/brand-1.webp
+/assets/brand-2.webp
+/assets/brand-3.webp
+/assets/evony-0.webp
+/assets/evony-1.webp
+/assets/light-0.webp
+/assets/light-1.webp
+/assets/light-2.webp
+/assets/logo.png
+/assets/lux-0.webp
+/assets/lux-1.webp
+/assets/lux-2.webp
+/assets/lux-3.webp
+/assets/mercury-0.webp
+/assets/mercury-1.webp
+/assets/mercury-2.webp
+/assets/mermer-0.webp
+/assets/mermer-1.webp
+/assets/mermer-2.webp
+/assets/moon-0.webp
+/assets/moon-1.webp
+/assets/moon-2.webp
+/assets/mozaik-0.webp
+/assets/nice-0.webp
+/assets/nice-1.webp
+/assets/nice-2.webp
+/assets/nice-3.webp
+/assets/odessa-0.webp
+/assets/odessa-1.webp
+/assets/odessa-2.webp
+/assets/products.js
+/assets/rattan-0.webp
+/assets/style.css
+/assets/trend-0.webp
+/assets/trend-1.webp
+/assets/trend-2.webp
+/assets/trend-3.webp
+/assets/uranus-0.webp
+/assets/uranus-1.webp
+/assets/uranus-2.webp
+/assets/venus-0.webp
+/assets/venus-1.webp
+/assets/venus-2.webp
+
+# Okunan sayfalar:
+#   / 200
+#   /brand-cilt-bakim-koltugu.html 200
+#   /cilt-bakim-koltugu-secim-rehberi.html 200
+#   /dinlenme-yatagi-secim-rehberi.html 200
+#   /evony-dinlenme-yatagi.html 200
+#   /gizlilik.html 200
+#   /light-dinlenme-yatagi.html 200
+#   /lux-soft-masaj-yatagi.html 200
+#   /mercury-dinlenme-yatagi.html 200
+#   /mermer-dinlenme-yatagi.html 200
+#   /moon-dinlenme-yatagi.html 200
+#   /mozaik-dinlenme-yatagi.html 200
+#   /nice-masaj-yatagi.html 200
+#   /odessa-dinlenme-yatagi.html 200
+#   /rattan-sezlong.html 200
+#   /trend-masaj-yatagi.html 200
+#   /uranus-dinlenme-yatagi.html 200
+#   /venus-dinlenme-yatagi.html 200

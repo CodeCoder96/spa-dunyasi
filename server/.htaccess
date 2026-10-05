@@ -1,0 +1,76 @@
+# Spa Dünyası, Apache 2.4 / LiteSpeed
+# DİKKAT: Bu dosyadaki bir hata bütün siteyi 500 yapar. Her değişiklikten sonra smoke testini çalıştır.
+
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+AcceptPathInfo Off
+AddDefaultCharset UTF-8
+ErrorDocument 404 /404.html
+
+<IfModule mod_mime.c>
+  AddCharset UTF-8 .html .css .js .json .xml .txt .svg .webmanifest
+  AddType image/avif .avif
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+  AddType image/svg+xml .svg
+  AddType application/manifest+json .webmanifest
+  AddType text/javascript .js .mjs
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 0) Nokta ile başlayan yolları engelle (.well-known hariç: SSL yenilemesi için şart)
+  RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+  # 1) v1'den slug'ı düzeltilen sayfalar (MIM-05). v1'in 18 URL'sinin tamamı aynı yolda korunduğu için kural yok.
+  # RewriteRule ^eski-slug\.html$ https://spadunyasi.com.tr/yeni-slug.html [R=301,L]
+
+  # 2) /en → /en/
+  RewriteRule ^en$ https://spadunyasi.com.tr/en/ [R=301,L]
+
+  # 3) /index.html ve /en/index.html → dizin kökü (sadece dış istekler; iç alt istekler döngü yapmaz)
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^?\ ]*/)?index\.html[?\ ] [NC]
+  RewriteRule ^ https://spadunyasi.com.tr/%1 [R=301,L,NE]
+
+  # 4) /sayfa.html/ → /sayfa.html
+  RewriteRule ^(.+\.html)/+$ https://spadunyasi.com.tr/$1 [R=301,L,NE]
+
+  # 5) Uzantısız → .html (dosya varsa)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ https://spadunyasi.com.tr/$1.html [R=301,L,NE]
+
+  # 6) HTTPS (Cloudflare gibi bir proxy arkasında döngüye girmemek için X-Forwarded-Proto da kontrol edilir)
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://spadunyasi.com.tr%{REQUEST_URI} [R=301,L,NE]
+
+  # 7) Kanonik host (www ve diğer takma adlar)
+  RewriteCond %{HTTP_HOST} !^spadunyasi\.com\.tr$ [NC]
+  RewriteRule ^ https://spadunyasi.com.tr%{REQUEST_URI} [R=301,L,NE]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()"
+  Header always set Strict-Transport-Security "max-age=31536000"
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(xml|txt|webmanifest)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "\.(ico|png|svg|jpg|jpeg|webp|avif)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/xml text/xml text/plain image/svg+xml application/manifest+json
+</IfModule>
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json application/xml text/xml text/plain image/svg+xml application/manifest+json
+</IfModule>

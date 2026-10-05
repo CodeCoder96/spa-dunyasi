@@ -1,0 +1,16 @@
+---
+// Every TR page except the home page (MIM-02): /<slug>.html
+import PageRouter from '../templates/PageRouter.astro';
+import { routesOf } from '../lib/routes.ts';
+import { assertPairs } from '../lib/content.ts';
+
+export async function getStaticPaths() {
+  await assertPairs();
+  return routesOf('tr')
+    .filter((r) => r.type !== 'home')
+    .map((r) => ({ params: { slug: r.slug }, props: { route: r } }));
+}
+const { route } = Astro.props;
+---
+
+<PageRouter route={route} />

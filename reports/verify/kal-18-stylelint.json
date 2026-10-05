@@ -1,0 +1,12 @@
+{
+  "id": "kal-18-stylelint",
+  "title": "Stylelint (tekrar eden seçici/özellik, tanımsız custom property), TAS-02, TAS-04",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "files": 25
+  },
+  "ms": 691,
+  "ok": true,
+  "at": "2026-10-03T20:37:52.552Z"
+}

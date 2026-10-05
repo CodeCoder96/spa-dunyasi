@@ -1,0 +1,17 @@
+{
+  "id": "per-02-budgets",
+  "title": "Bütçeler (gzip): HTML ≤ 40 KB, CSS ≤ 15 KB, JS ≤ 30/15 KB, font ≤ 120 KB",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "maxHtmlGzip": {
+      "size": 30276,
+      "f": "/etajer.html"
+    },
+    "fontsKB": 55,
+    "fontFiles": 2
+  },
+  "ms": 2381,
+  "ok": true,
+  "at": "2026-10-03T20:37:51.572Z"
+}

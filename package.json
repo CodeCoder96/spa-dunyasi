@@ -1,0 +1,48 @@
+{
+  "name": "spadunyasi",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "scrape": "node scripts/scrape/run.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "astro check",
+    "serve": "node scripts/serve-dist.mjs",
+    "verify": "node scripts/verify/run.mjs",
+    "verify:data": "node scripts/verify/run.mjs data",
+    "verify:content": "node scripts/verify/run.mjs content",
+    "verify:seo": "node scripts/verify/run.mjs seo",
+    "verify:output": "node scripts/verify/run.mjs output",
+    "smoke": "node scripts/smoke/run.mjs",
+    "zip": "node scripts/postbuild/zip.mjs",
+    "lint:css": "node scripts/verify/run.mjs code",
+    "verify:browser": "node scripts/verify/run.mjs browser",
+    "verify:lighthouse": "node scripts/verify/run.mjs lighthouse",
+    "test": "playwright test",
+    "test:ga-build": "node scripts/qa/build-ga-test.mjs",
+    "verify:code": "node scripts/verify/run.mjs code"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "0.4.2",
+    "astro": "7.3.5",
+    "cheerio": "1.2.0",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "html-validate": "11.16.1",
+    "lighthouse": "13.5.0",
+    "pdfjs-dist": "6.3.289",
+    "playwright": "1.63.0",
+    "stylelint": "17.16.0",
+    "stylelint-config-standard": "40.0.0",
+    "stylelint-value-no-unknown-custom-properties": "6.1.1",
+    "typescript": "6.0.3"
+  }
+}

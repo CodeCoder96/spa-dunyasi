@@ -1,0 +1,114 @@
+---
+// Technical specs printed from the catalog only (KAY-21, SAB-02). Empty sections are not rendered.
+import type { Product } from '../lib/catalog-schema.ts';
+import { t, type Lang } from '../i18n/ui.ts';
+
+interface Props {
+  product: Product;
+  lang: Lang;
+}
+const { product: p, lang } = Astro.props;
+---
+
+{
+  p.specs.length > 0 && (
+    <section class="specs" aria-labelledby="specs-title">
+      <h2 id="specs-title">{t(lang, 'product.specs')}</h2>
+      <table class="specs__table">
+        <tbody>
+          {p.specs.map((s) => (
+            <tr>
+              <th scope="row">{s.label[lang]}</th>
+              <td>{s.value[lang]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  )
+}
+{
+  p.options.length > 0 && (
+    <section class="specs" aria-labelledby="options-title">
+      <h2 id="options-title">{t(lang, 'product.options')}</h2>
+      <ul role="list" class="specs__chips">
+        {p.options.map((o) => (
+          <li class="chip">{o[lang]}</li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+{
+  p.variants.length > 0 && (
+    <section class="specs" aria-labelledby="variants-title">
+      <h2 id="variants-title">{t(lang, 'product.variants')}</h2>
+      <ul role="list" class="specs__chips">
+        {p.variants.map((v) => (
+          <li class="chip">{v[lang]}</li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+<style>
+  @layer components {
+    .specs {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-4);
+    }
+
+    .specs h2 {
+      font-size: var(--fs-h3);
+    }
+
+    .specs__table {
+      width: 100%;
+      max-width: 720px;
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+    }
+
+    .specs__table th,
+    .specs__table td {
+      padding: var(--s-3) var(--s-4);
+      text-align: left;
+      vertical-align: top;
+      border-bottom: var(--border);
+    }
+
+    .specs__table tr:last-child th,
+    .specs__table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .specs__table th {
+      width: 45%;
+      font-weight: 500;
+      color: var(--c-ink-2);
+    }
+
+    .specs__table td {
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .specs__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+    }
+
+    @media print {
+      .specs__table tr {
+        break-inside: avoid;
+      }
+    }
+  }
+</style>

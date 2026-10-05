@@ -1,0 +1,749 @@
+{
+  "_doc": "SEO-12: lastmod = day the content hash changed. Commit this file.",
+  "pages": {
+    "tr|sayfa:anasayfa": {
+      "hash": "28058817e4f6cf7c",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:anasayfa": {
+      "hash": "238c287c916c0a13",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:urunler": {
+      "hash": "18204db69cf1c266",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:urunler": {
+      "hash": "0e81fd0b9e766f74",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:hizmetler": {
+      "hash": "6107dd7feaa95bf9",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:hizmetler": {
+      "hash": "36f8f5bc62fe2ebf",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:rehber": {
+      "hash": "f5c49b553edceb40",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:rehber": {
+      "hash": "d22ca86b10ff60a2",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:hakkimizda": {
+      "hash": "0a919073af7224ea",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:hakkimizda": {
+      "hash": "60efcb2d114f05e6",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:iletisim": {
+      "hash": "3378bde6bf78bb2d",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:iletisim": {
+      "hash": "067c7efd1b901432",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:sss": {
+      "hash": "405c88bbdf154ba0",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:sss": {
+      "hash": "a98bb26d46aa3519",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:gizlilik": {
+      "hash": "6645608450c64b7c",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:gizlilik": {
+      "hash": "0f850f19f843b6f2",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:kvkk": {
+      "hash": "78f27959cdbcbbfc",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:kvkk": {
+      "hash": "cbf4c08987075a34",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:cerez": {
+      "hash": "37b5475ff2fde7d3",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:cerez": {
+      "hash": "b6df5e0608ae460e",
+      "date": "2026-10-03"
+    },
+    "tr|sayfa:404": {
+      "hash": "e3b0c44298fc1c14",
+      "date": "2026-10-03"
+    },
+    "en|sayfa:404": {
+      "hash": "e3b0c44298fc1c14",
+      "date": "2026-10-03"
+    },
+    "tr|kategori:masaj-yataklari": {
+      "hash": "889cf4f3063dcc11",
+      "date": "2026-10-03"
+    },
+    "en|kategori:masaj-yataklari": {
+      "hash": "ceaf7846bbedb04e",
+      "date": "2026-10-03"
+    },
+    "tr|kategori:dinlenme-yataklari": {
+      "hash": "b614b594034ef4bb",
+      "date": "2026-10-03"
+    },
+    "en|kategori:dinlenme-yataklari": {
+      "hash": "bc423b29d62311ca",
+      "date": "2026-10-03"
+    },
+    "tr|kategori:bakim-ve-pedikur-koltuklari": {
+      "hash": "8c339e913e0690ae",
+      "date": "2026-10-03"
+    },
+    "en|kategori:bakim-ve-pedikur-koltuklari": {
+      "hash": "190d5d7e163cbcbb",
+      "date": "2026-10-03"
+    },
+    "tr|kategori:manikur": {
+      "hash": "66dc650fee30dd3f",
+      "date": "2026-10-03"
+    },
+    "en|kategori:manikur": {
+      "hash": "b78aa3290fb26f14",
+      "date": "2026-10-03"
+    },
+    "tr|kategori:havlu-ve-sterilizatorler": {
+      "hash": "508c82874940c128",
+      "date": "2026-10-03"
+    },
+    "en|kategori:havlu-ve-sterilizatorler": {
+      "hash": "4d4dff53f0ee59d5",
+      "date": "2026-10-03"
+    },
+    "tr|kategori:sicak-tas-ve-isiticilar": {
+      "hash": "a9eac37ccc3fcc6e",
+      "date": "2026-10-03"
+    },
+    "en|kategori:sicak-tas-ve-isiticilar": {
+      "hash": "5f33c6bf38401091",
+      "date": "2026-10-03"
+    },
+    "tr|kategori:islak-alan": {
+      "hash": "b2e403f51ecd18c3",
+      "date": "2026-10-03"
+    },
+    "en|kategori:islak-alan": {
+      "hash": "84e3e9e9d04f8745",
+      "date": "2026-10-03"
+    },
+    "tr|kategori:aksesuar": {
+      "hash": "d68d12b90d47f81b",
+      "date": "2026-10-03"
+    },
+    "en|kategori:aksesuar": {
+      "hash": "384b719d8fb94eb1",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-001": {
+      "hash": "75ffa291d57d7a08",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-001": {
+      "hash": "6be0d0ca0f5e04a9",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-002": {
+      "hash": "5b8bfcb82fe2349e",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-002": {
+      "hash": "046ddbcac59ad787",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-003": {
+      "hash": "0c3dca3945d781a4",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-003": {
+      "hash": "2f8be56d0df66956",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-004": {
+      "hash": "ca7030db32df68ec",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-004": {
+      "hash": "cadfa278d2f1e7ab",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-005": {
+      "hash": "653b72a9edfcd44f",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-005": {
+      "hash": "1942f35344bc9e21",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-006": {
+      "hash": "6c72765a5be45054",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-006": {
+      "hash": "5b93374164b3ad19",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-007": {
+      "hash": "349a49931ed21e3a",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-007": {
+      "hash": "7488dab852b77c16",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-008": {
+      "hash": "78667e85759e361e",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-008": {
+      "hash": "41122e2d385e2d1c",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-009": {
+      "hash": "2b562124b9112a1a",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-009": {
+      "hash": "2871f24f6b66ebb5",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-010": {
+      "hash": "3a6005d24a9a74a8",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-010": {
+      "hash": "a92332a1946e4d73",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-011": {
+      "hash": "3bdac669cc31bb86",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-011": {
+      "hash": "a3ec824b655948fa",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-012": {
+      "hash": "fe83dcab8d6e4963",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-012": {
+      "hash": "70def49ef1695a62",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-013": {
+      "hash": "06610da4ae1fcc19",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-013": {
+      "hash": "a5c324b888fdabed",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-014": {
+      "hash": "b5cc107afd9a079f",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-014": {
+      "hash": "828738fd54e0e055",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-015": {
+      "hash": "b00922bc8bca16a6",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-015": {
+      "hash": "b5043d7b678a1aef",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-016": {
+      "hash": "bc937b3bdabb70fe",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-016": {
+      "hash": "d9f74f517c851eca",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-017": {
+      "hash": "7fcb5a02e671af53",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-017": {
+      "hash": "72222e7e2abc30db",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-018": {
+      "hash": "73491f7d435670d1",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-018": {
+      "hash": "9941192ff8b4afa6",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-019": {
+      "hash": "5b64c5ae7ddbf706",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-019": {
+      "hash": "fa26376c11f723de",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-020": {
+      "hash": "29e0cd3d284ed4e9",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-020": {
+      "hash": "c8f4e66685559c6f",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-021": {
+      "hash": "2b74521b323f4d80",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-021": {
+      "hash": "c98b3d1f0ce9b9b8",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-022": {
+      "hash": "9c9fddfa8dcfa984",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-022": {
+      "hash": "f344179b75a74c47",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-023": {
+      "hash": "845c18776ad7d756",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-023": {
+      "hash": "abe7663b8e4c1fa8",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-024": {
+      "hash": "d1d451bf7cbb5973",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-024": {
+      "hash": "7bd811ec3d7f9ba6",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-025": {
+      "hash": "15cdcb876dea3cd5",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-025": {
+      "hash": "27e40d4735588a1f",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-026": {
+      "hash": "5274bda18054ab79",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-026": {
+      "hash": "345290ff9f301569",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-027": {
+      "hash": "47e0e6af091adf3f",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-027": {
+      "hash": "707cdbb0ae73164d",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-028": {
+      "hash": "824c0473727a8e2c",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-028": {
+      "hash": "bed6a24ca3420b7d",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-029": {
+      "hash": "ae00cb4d2a90526a",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-029": {
+      "hash": "7d1bdf0f32103bc1",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-030": {
+      "hash": "a8e063937d839e7f",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-030": {
+      "hash": "be651cd83b81d9fb",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-031": {
+      "hash": "67a7c2b272f1fd59",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-031": {
+      "hash": "7a7d7c38308c04f1",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-032": {
+      "hash": "924367711e8a604c",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-032": {
+      "hash": "b31ecbe371d84223",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-033": {
+      "hash": "38601bee48b7a1d1",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-033": {
+      "hash": "e2c14a26e9930e62",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-034": {
+      "hash": "3fc3dff6c5b0bcc4",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-034": {
+      "hash": "151d10cf38e0d5f4",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-035": {
+      "hash": "3cdc3cb4f38644e9",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-035": {
+      "hash": "8e113c34b24cbcb5",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-036": {
+      "hash": "ef1c3377218fa2ce",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-036": {
+      "hash": "20d226aabe061f11",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-037": {
+      "hash": "8c5d59d2a4b3f1d7",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-037": {
+      "hash": "c3894bb96c9b609e",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-038": {
+      "hash": "381e53e478783203",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-038": {
+      "hash": "24bdf3bd6203dff6",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-039": {
+      "hash": "d1b13d429db9d6c6",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-039": {
+      "hash": "805df2c38f77619f",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-040": {
+      "hash": "1d8e03642cf795fe",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-040": {
+      "hash": "b951bcf06647d04d",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-041": {
+      "hash": "c50f22ebcb39b6b8",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-041": {
+      "hash": "eaa5b44e2b2c19ce",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-042": {
+      "hash": "3fbf819e787a1baf",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-042": {
+      "hash": "c7b5802537df41ae",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-043": {
+      "hash": "4c2aa61b1c12d5df",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-043": {
+      "hash": "11f279b12f4c650e",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-044": {
+      "hash": "95de43c733bf6f64",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-044": {
+      "hash": "76055e039ee0515c",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-045": {
+      "hash": "612afdb54b485fa5",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-045": {
+      "hash": "f531d0c49922fba5",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-046": {
+      "hash": "341b7ab5f2cfea4c",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-046": {
+      "hash": "b632290bec62ab0e",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-047": {
+      "hash": "30a9272f2a64dd5c",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-047": {
+      "hash": "d58dcfe824f75120",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-048": {
+      "hash": "010c88d9d4a07cbc",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-048": {
+      "hash": "71d45f5b8e8bbfa4",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-049": {
+      "hash": "2b78ad5b7c87a913",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-049": {
+      "hash": "bb3c599c1c7f0268",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-050": {
+      "hash": "81638d0acc1b6c86",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-050": {
+      "hash": "52c341102169819d",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-051": {
+      "hash": "18b861bfb262814d",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-051": {
+      "hash": "2f7898b290d83383",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-052": {
+      "hash": "b2eb033a8da2303a",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-052": {
+      "hash": "12af12070a884078",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-053": {
+      "hash": "5cadf86590df003c",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-053": {
+      "hash": "29076ac2b24dc934",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-054": {
+      "hash": "c9e5fef3894c460a",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-054": {
+      "hash": "920bcb061cf7e319",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-055": {
+      "hash": "00a8d3bc4895b2d0",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-055": {
+      "hash": "01c1edad23bd048d",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-056": {
+      "hash": "28d840573e82ab3c",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-056": {
+      "hash": "e688a6f221ed94fc",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-057": {
+      "hash": "0dc837fa6599e88d",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-057": {
+      "hash": "82dea6de95e598c2",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-058": {
+      "hash": "79dca0e5af212c8c",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-058": {
+      "hash": "13676fcc1e9122a8",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-059": {
+      "hash": "650734bfb3406032",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-059": {
+      "hash": "3f9cae3a48b559bb",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-060": {
+      "hash": "c034986952cb5656",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-060": {
+      "hash": "7f62331960df5156",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-061": {
+      "hash": "a99bbd79838b455b",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-061": {
+      "hash": "2fb73ed1126e1050",
+      "date": "2026-10-03"
+    },
+    "tr|urun:SD-062": {
+      "hash": "dbf850051a12eb3b",
+      "date": "2026-10-03"
+    },
+    "en|urun:SD-062": {
+      "hash": "d64317bafd231503",
+      "date": "2026-10-03"
+    },
+    "tr|hizmet:sauna": {
+      "hash": "749c6548d425dcb7",
+      "date": "2026-10-03"
+    },
+    "en|hizmet:sauna": {
+      "hash": "6f5329555f9773ff",
+      "date": "2026-10-03"
+    },
+    "tr|hizmet:hamam": {
+      "hash": "af3a92aa332a9a80",
+      "date": "2026-10-03"
+    },
+    "en|hizmet:hamam": {
+      "hash": "3987e20ddb40a6b8",
+      "date": "2026-10-03"
+    },
+    "tr|hizmet:buhar-odasi": {
+      "hash": "2d02b66201426706",
+      "date": "2026-10-03"
+    },
+    "en|hizmet:buhar-odasi": {
+      "hash": "6de51ce6951b2c82",
+      "date": "2026-10-03"
+    },
+    "tr|hizmet:havuz": {
+      "hash": "1e29ca3239966aaf",
+      "date": "2026-10-03"
+    },
+    "en|hizmet:havuz": {
+      "hash": "fc32557d5ebe5f67",
+      "date": "2026-10-03"
+    },
+    "tr|rehber:dinlenme-yatagi-secimi": {
+      "hash": "85442b6a79270dce",
+      "date": "2026-10-03"
+    },
+    "en|rehber:dinlenme-yatagi-secimi": {
+      "hash": "2834119f7205e089",
+      "date": "2026-10-03"
+    },
+    "tr|rehber:cilt-bakim-koltugu-secimi": {
+      "hash": "c71362dbea29256f",
+      "date": "2026-10-03"
+    },
+    "en|rehber:cilt-bakim-koltugu-secimi": {
+      "hash": "630e859910f64cd5",
+      "date": "2026-10-03"
+    },
+    "tr|rehber:masaj-yatagi-secimi": {
+      "hash": "5551d061895a2105",
+      "date": "2026-10-03"
+    },
+    "en|rehber:masaj-yatagi-secimi": {
+      "hash": "b247610a3d845ff8",
+      "date": "2026-10-03"
+    },
+    "tr|rehber:pedikur-koltugu-secimi": {
+      "hash": "6caaa6b02fb765fd",
+      "date": "2026-10-03"
+    },
+    "en|rehber:pedikur-koltugu-secimi": {
+      "hash": "13124743880423fe",
+      "date": "2026-10-03"
+    },
+    "tr|rehber:spa-ekipman-listesi": {
+      "hash": "070e90232762fbff",
+      "date": "2026-10-03"
+    },
+    "en|rehber:spa-ekipman-listesi": {
+      "hash": "36d2c7ad3bdc17a7",
+      "date": "2026-10-03"
+    },
+    "tr|rehber:havlu-isitici-kullanimi": {
+      "hash": "9e830d09409618d4",
+      "date": "2026-10-03"
+    },
+    "en|rehber:havlu-isitici-kullanimi": {
+      "hash": "2c2596bbe6a01217",
+      "date": "2026-10-03"
+    },
+    "tr|rehber:hamam-sauna-buhar": {
+      "hash": "175123b3cc779923",
+      "date": "2026-10-03"
+    },
+    "en|rehber:hamam-sauna-buhar": {
+      "hash": "57c1c65c49be3f75",
+      "date": "2026-10-03"
+    },
+    "tr|rehber:sicak-tas-ekipmanlari": {
+      "hash": "fbbe5eea658dcadc",
+      "date": "2026-10-03"
+    },
+    "en|rehber:sicak-tas-ekipmanlari": {
+      "hash": "faf7a4e788a8715d",
+      "date": "2026-10-03"
+    }
+  }
+}

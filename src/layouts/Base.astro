@@ -1,0 +1,119 @@
+---
+// Base layout: head (SEO-03..07), header, main, footer, mobile bar, quote dialog, cookie banner.
+import { Font } from 'astro:assets';
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileBar from '../components/MobileBar.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import QuoteDialog from '../components/QuoteDialog.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import { absolute, breadcrumb, type Route } from '../lib/routes.ts';
+import { site, settings } from '../../site.config.ts';
+import { t } from '../i18n/ui.ts';
+import type { WaContext } from '../lib/contact.ts';
+import { quoteIndexUrl } from '../lib/quote-index.ts';
+
+export interface Preload {
+  srcset: string;
+  sizes: string;
+}
+
+interface Props {
+  route: Route;
+  /** <title> without suffix; the brand suffix is appended unless it is the home page (SEO-03). */
+  title: string;
+  description: string;
+  wa?: WaContext;
+  schema?: Record<string, unknown>[];
+  ogImage?: { path: string; alt: string };
+  preload?: Preload | undefined;
+  ogType?: 'website' | 'article';
+}
+
+const { route, title, description, wa = { kind: 'general' }, schema = [], ogImage, preload, ogType = 'website' } = Astro.props;
+const lang = route.lang;
+const isHome = route.type === 'home';
+const is404 = route.type === '404';
+const fullTitle = isHome ? title : `${title} | ${site.brand}`;
+const canonical = absolute(route.path);
+const trUrl = absolute(lang === 'tr' ? route.path : route.altPath);
+const enUrl = absolute(lang === 'en' ? route.path : route.altPath);
+const og = ogImage ?? { path: `/og/${route.id.replace(':', '-').toLowerCase()}.jpg`, alt: title };
+const crumbs = isHome ? [] : breadcrumb(route);
+const jsonLd = schema.length ? JSON.stringify({ '@context': 'https://schema.org', '@graph': schema }) : null;
+// PER-05: prefetch only (never prerender), same-origin pages, moderate eagerness.
+const speculation = JSON.stringify({
+  prefetch: [{ source: 'document', where: { or: [{ href_matches: '/*.html' }, { href_matches: '/' }, { href_matches: '/en/' }] }, eagerness: 'moderate' }],
+});
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="only light" />
+    <meta name="theme-color" content="#F7F5F0" />
+    {!is404 && <link rel="canonical" href={canonical} />}
+    {!route.indexable && <meta name="robots" content="noindex,follow" />}
+    {
+      route.indexable && (
+        <>
+          <link rel="alternate" hreflang="tr" href={trUrl} />
+          <link rel="alternate" hreflang="en" href={enUrl} />
+          <link rel="alternate" hreflang="x-default" href={enUrl} />
+        </>
+      )
+    }
+    {isHome && settings.googleSiteVerification && <meta name="google-site-verification" content={settings.googleSiteVerification} />}
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:site_name" content={site.brand} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_GB'} />
+    <meta property="og:locale:alternate" content={lang === 'tr' ? 'en_GB' : 'tr_TR'} />
+    <meta property="og:image" content={absolute(og.path)} />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={og.alt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-fraunces" preload />
+    {preload && <link rel="preload" as="image" type="image/avif" imagesrcset={preload.srcset} imagesizes={preload.sizes} fetchpriority="high" />}
+    {jsonLd && <script type="application/ld+json" is:inline set:html={jsonLd} />}
+    <script type="speculationrules" is:inline set:html={speculation} />
+  </head>
+  <body
+    data-lang={lang}
+    data-page-type={route.type}
+    data-quote-index={quoteIndexUrl}
+    data-product-code={route.type === 'product' ? route.key : undefined}
+    data-ga-id={settings.ga4MeasurementId || undefined}
+    data-ga-host={settings.ga4MeasurementId ? settings.analyticsHostname : undefined}
+    data-consent-version={settings.ga4MeasurementId ? settings.consentPolicyVersion : undefined}
+  >
+    <a class="skip-link" href="#main">{t(lang, 'skip.content')}</a>
+    <Header route={route} />
+    <main id="main" tabindex="-1">
+      {crumbs.length > 0 && <Breadcrumb items={crumbs} />}
+      <slot />
+    </main>
+    <Footer route={route} />
+    <MobileBar lang={lang} wa={wa} />
+    <QuoteDialog lang={lang} />
+    {settings.ga4MeasurementId && <CookieBanner lang={lang} />}
+    <script>
+      import '../scripts/nav.ts';
+      import '../scripts/track.ts';
+    </script>
+  </body>
+</html>

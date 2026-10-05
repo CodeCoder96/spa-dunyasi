@@ -1,0 +1,518 @@
+---
+// Home page (SAB-01). Text comes from src/content/pages/<lang>/anasayfa.md; facts only from §4.
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Icon from '../components/Icon.astro';
+import ProductCard from '../components/ProductCard.astro';
+import TrustList from '../components/TrustList.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+import heroImg from '../assets/site/home-hero.webp';
+import { render } from 'astro:content';
+import { content } from '../lib/content.ts';
+import { products, productsIn, byCode } from '../lib/catalog.ts';
+import { CATEGORY_META } from '../lib/categories.ts';
+import { asset, buildImage } from '../lib/images.ts';
+import { homeHeroAlt } from '../lib/site-images.ts';
+import { href, route as getRoute, routesOf, type Route } from '../lib/routes.ts';
+import { orgSchema, websiteSchema, faqSchema } from '../lib/schema.ts';
+import { marked } from '../lib/inline-md.ts';
+import { waLink, waMessage } from '../lib/contact.ts';
+import { brandHtml, t } from '../i18n/ui.ts';
+import type { CategoryId } from '../lib/catalog-schema.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const entry = await content('pages', lang, 'anasayfa');
+const fm = entry?.data;
+const { Content } = entry ? await render(entry) : { Content: null };
+const categories = routesOf(lang, 'category');
+const featured = (fm?.featured ?? products.filter((_, i) => i % 7 === 0).map((p) => p.code)).map((c) => byCode.get(c)!).filter(Boolean);
+const guideRoutes = (fm?.guides ?? ['masaj-yatagi-secimi', 'dinlenme-yatagi-secimi', 'spa-ekipman-listesi']).map((k) => getRoute(lang, `rehber:${k}`));
+const services = routesOf(lang, 'service');
+const heroSizes = '(width >= 1024px) 50vw, 100vw';
+const hero = await buildImage(heroImg, 1600);
+const coverFor = (c: CategoryId) => byCode.get(CATEGORY_META[c].cover) ?? productsIn(c)[0];
+const schema = [...orgSchema(), websiteSchema(lang), ...(fm?.faq?.length ? [faqSchema(fm.faq.slice(0, 5), lang)] : [])];
+const sec = fm?.sections ?? {};
+---
+
+<Base
+  route={route}
+  title={fm?.title ?? `Spa Dünyası | ${t(lang, 'trust.authorized')}`}
+  description={fm?.description ?? t(lang, 'cta.band.text')}
+  schema={schema}
+  preload={{ srcset: hero.avif, sizes: heroSizes }}
+>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow" set:html={brandHtml(t(lang, 'trust.authorized'))} />
+        <h1 set:html={brandHtml(fm?.h1 ?? 'Spa Dünyası')} />
+        {fm?.hero?.subtitle && <p class="lead" set:html={marked(fm.hero.subtitle, lang)} />}
+        <div class="hero__actions">
+          <a class="btn" href={waLink(waMessage(lang, { kind: 'general' }))} target="_blank" rel="noopener" data-cta="inline">
+            <Icon name="whatsapp" />{t(lang, 'cta.whatsapp')}
+          </a>
+          <a class="btn btn--ghost" href={href(lang, 'sayfa:urunler')}>{t(lang, 'cta.browse')}<Icon name="arrow-right" /></a>
+        </div>
+        <TrustList lang={lang} variant="badges" />
+      </div>
+      <div class="hero__media">
+        <Img src={heroImg} alt={homeHeroAlt[lang]} sizes={heroSizes} priority />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cat-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="cat-title">{t(lang, 'home.categories')}</h2>
+        {sec.categories && <p class="lead" set:html={marked(sec.categories, lang)} />}
+      </div>
+      <ul role="list" class="bento">
+        {
+          categories.map((c, i) => {
+            const p = coverFor(c.key as CategoryId);
+            const img = p?.images[0];
+            return (
+              <li class:list={['bento__item', i === 0 && 'bento__item--wide']}>
+                <div class="bento__media">
+                  {img && <Img src={asset(img.file)} alt="" sizes="(width >= 1024px) 33vw, (width >= 640px) 50vw, 100vw" maxWidth={960} fit={img.fit} class="bento__img" />}
+                </div>
+                <a class="bento__link" href={c.path}>
+                  <span class="bento__name">{c.title}</span>
+                  <span class="bento__count">{t(lang, 'category.products', { n: productsIn(c.key as CategoryId).length })}</span>
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--sand">
+    <div class="container">
+      <div class="section__head section__head--row">
+        <h2 id="feat-title">{t(lang, 'home.featured')}</h2>
+        <a href={href(lang, 'sayfa:urunler')}>{t(lang, 'home.viewAll')}</a>
+      </div>
+      <div class="strip" tabindex="0" role="region" aria-labelledby="feat-title">
+        {featured.map((p) => <ProductCard product={p} lang={lang} />)}
+      </div>
+    </div>
+  </section>
+
+  {
+    fm?.why && (
+      <section class="section" aria-labelledby="why-title">
+        <div class="container">
+          <div class="section__head">
+            <h2 id="why-title" set:html={brandHtml(t(lang, 'home.why'))} />
+          </div>
+          <ul role="list" class="why">
+            {fm.why.map((w) => (
+              <li class="why__item">
+                <h3 set:html={brandHtml(w.title)} />
+                <p set:html={marked(w.text, lang)} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section section--sand" aria-labelledby="svc-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="svc-title">{t(lang, 'home.services')}</h2>
+        {sec.services && <p class="lead" set:html={marked(sec.services, lang)} />}
+      </div>
+      <ul role="list" class="svc-list">
+        {
+          services.map((s) => (
+            <li>
+              <a class="svc-list__link" href={s.path}>
+                <span>{s.title}</span>
+                <Icon name="arrow-right" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section__head">
+        <h2 id="how-title">{t(lang, 'home.how')}</h2>
+        {sec.how && <p class="lead" set:html={marked(sec.how, lang)} />}
+      </div>
+      <ol role="list" class="steps">
+        {
+          (['home.how.1', 'home.how.2', 'home.how.3'] as const).map((k, i) => (
+            <li class="steps__item">
+              <span class="steps__n" aria-hidden="true">{i + 1}</span>
+              <span class="steps__t">{t(lang, k)}</span>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  {
+    Content && (
+      <section class="section section--sand">
+        <div class="container">
+          <div class="prose">
+            <Content />
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="section" aria-labelledby="guides-title">
+    <div class="container">
+      <div class="section__head section__head--row">
+        <h2 id="guides-title">{t(lang, 'home.guides')}</h2>
+        <a href={href(lang, 'sayfa:rehber')}>{t(lang, 'home.viewAll')}</a>
+      </div>
+      <ul role="list" class="guide-cards">
+        {
+          guideRoutes.map((g) => (
+            <li class="card guide-card">
+              <h3>
+                <a href={g.path}>{g.title}</a>
+              </h3>
+              <span class="guide-card__more" aria-hidden="true">
+                {t(lang, 'guide.read')} <Icon name="arrow-right" size={16} />
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  {
+    fm?.faq && (
+      <section class="section section--sand">
+        <div class="container">
+          <Faq items={fm.faq.slice(0, 5)} title={t(lang, 'home.faq')} lang={lang} />
+        </div>
+      </section>
+    )
+  }
+
+  <CtaBand lang={lang} />
+  <ContactBlock lang={lang} />
+</Base>
+
+<style>
+  @layer components {
+    .hero {
+      padding-block: var(--s-8) var(--section-y);
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: var(--s-8);
+      align-items: center;
+    }
+
+    .hero__text {
+      display: grid;
+      gap: var(--s-5);
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+    }
+
+    .hero__media {
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+
+    .hero__media :global(.img) {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (width >= 1024px) {
+      .hero__grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+        gap: var(--s-16);
+      }
+
+      .hero__media {
+        aspect-ratio: 5 / 6;
+      }
+    }
+
+    .section__head--row {
+      display: flex;
+      max-width: none;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--s-4);
+    }
+
+    .bento {
+      display: grid;
+      gap: var(--s-4);
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .bento__item {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      background: var(--c-surface);
+      border: var(--border);
+    }
+
+    .bento__media {
+      aspect-ratio: 4 / 3;
+      background: var(--c-surface);
+      overflow: hidden;
+    }
+
+    .bento__item--wide .bento__media {
+      aspect-ratio: 16 / 9;
+    }
+
+    .bento__media :global(.bento__img) {
+      width: 100%;
+      height: 100%;
+    }
+
+    .bento__link {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: var(--s-1) var(--s-3);
+      padding: var(--s-4) var(--s-5);
+      color: var(--c-ink);
+      text-decoration: none;
+    }
+
+    .bento__link::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-card);
+    }
+
+    .bento__name {
+      font-family: var(--font-head);
+      font-size: 1.375rem;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+
+    .bento__count {
+      font-size: var(--fs-small);
+      color: var(--c-ink-2);
+    }
+
+    @media (hover: hover) {
+      .bento__item:hover {
+        border-color: var(--c-primary);
+      }
+
+      .bento__item:hover .bento__name {
+        color: var(--c-primary);
+      }
+    }
+
+    @media (width >= 640px) {
+      .bento {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bento__item--wide {
+        grid-column: span 2;
+      }
+    }
+
+    @media (width >= 1024px) {
+      .bento {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .bento__item--wide {
+        grid-column: span 2;
+      }
+
+      .bento__item--wide .bento__media {
+        aspect-ratio: 21 / 9;
+      }
+
+      .bento__item:not(.bento__item--wide) .bento__media {
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    .strip {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(260px, 300px);
+      gap: var(--s-4);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: var(--s-3);
+      overscroll-behavior-x: contain;
+    }
+
+    .strip > :global(*) {
+      scroll-snap-align: start;
+    }
+
+    .why {
+      display: grid;
+      gap: var(--s-6);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    }
+
+    .why__item {
+      display: grid;
+      gap: var(--s-2);
+      padding-top: var(--s-4);
+      border-top: 2px solid var(--c-primary);
+    }
+
+    .why__item h3 {
+      font-size: var(--fs-h4);
+      font-family: var(--font-body);
+      font-weight: 600;
+    }
+
+    .why__item p {
+      color: var(--c-ink-2);
+    }
+
+    .svc-list {
+      display: grid;
+      gap: var(--s-3);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    }
+
+    .svc-list__link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--s-3);
+      min-height: 72px;
+      padding: var(--s-4) var(--s-5);
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      color: var(--c-ink);
+      text-decoration: none;
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+    }
+
+    @media (hover: hover) {
+      .svc-list__link:hover {
+        border-color: var(--c-primary);
+        color: var(--c-primary);
+      }
+    }
+
+    .steps {
+      display: grid;
+      gap: var(--s-4);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+      counter-reset: step;
+    }
+
+    .steps__item {
+      display: flex;
+      align-items: center;
+      gap: var(--s-4);
+      padding: var(--s-5);
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-card);
+    }
+
+    .steps__n {
+      display: inline-grid;
+      place-items: center;
+      flex: none;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-pill);
+      background: var(--c-primary);
+      color: var(--c-on-primary);
+      font-weight: 600;
+    }
+
+    .steps__t {
+      font-weight: 600;
+    }
+
+    .guide-cards {
+      display: grid;
+      gap: var(--s-4);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    }
+
+    .guide-card {
+      position: relative;
+      display: grid;
+      gap: var(--s-4);
+      padding: var(--s-6);
+      align-content: space-between;
+    }
+
+    .guide-card h3 {
+      font-size: 1.3125rem;
+    }
+
+    .guide-card a {
+      color: var(--c-ink);
+      text-decoration: none;
+    }
+
+    .guide-card a::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-card);
+    }
+
+    .guide-card__more {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+      color: var(--c-primary);
+      font-weight: 600;
+      font-size: var(--fs-small);
+    }
+
+    @media (hover: hover) {
+      .guide-card:hover {
+        border-color: var(--c-primary);
+      }
+    }
+  }
+</style>

@@ -1,0 +1,19 @@
+{
+  "id": "kal-02-coverage",
+  "title": "Kapsam: her kaynak URL için karar, kod kilidi",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "totals": {
+      "dahil": 56,
+      "birlesti": 1,
+      "bolundu": 1,
+      "haric": 1,
+      "toplam": 59
+    },
+    "undecided": 0
+  },
+  "ms": 8,
+  "ok": true,
+  "at": "2026-10-03T20:37:31.367Z"
+}

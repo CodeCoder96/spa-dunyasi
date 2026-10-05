@@ -1,0 +1,1915 @@
+{
+  "_doc": "Catalog-derived facts (ICR-07). Regenerate with node scripts/catalog/derived-facts.mjs.",
+  "generatedFrom": "data/catalog/products.json",
+  "facts": [
+    {
+      "id": "masaj-yataklari.count",
+      "value": "21 adet",
+      "method": "\"Masaj Yatakları\" kategorisindeki katalog ürünlerinin sayısı",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-015",
+        "SD-016",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.width.values",
+      "value": "80 cm / 200 cm",
+      "method": "Masaj Yatakları: \"width\" alanının katalogdaki farklı değerleri (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.width.min",
+      "value": "80 cm",
+      "method": "Masaj Yatakları: \"width\" en küçük değer (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.width.max",
+      "value": "200 cm",
+      "method": "Masaj Yatakları: \"width\" en büyük değer (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.width.most",
+      "value": "80 cm",
+      "method": "Masaj Yatakları: \"width\" en sık değer (18/19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.length.values",
+      "value": "200 cm",
+      "method": "Masaj Yatakları: \"length\" alanının katalogdaki farklı değerleri (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.length.min",
+      "value": "200 cm",
+      "method": "Masaj Yatakları: \"length\" en küçük değer (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.length.max",
+      "value": "200 cm",
+      "method": "Masaj Yatakları: \"length\" en büyük değer (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.length.most",
+      "value": "200 cm",
+      "method": "Masaj Yatakları: \"length\" en sık değer (19/19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.height.values",
+      "value": "50 cm / 68-85 cm / 10-20 cm",
+      "method": "Masaj Yatakları: \"height\" alanının katalogdaki farklı değerleri (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.load_capacity.values",
+      "value": "350 kg",
+      "method": "Masaj Yatakları: \"load_capacity\" alanının katalogdaki farklı değerleri (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.load_capacity.min",
+      "value": "350 kg",
+      "method": "Masaj Yatakları: \"load_capacity\" en küçük değer (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.load_capacity.max",
+      "value": "350 kg",
+      "method": "Masaj Yatakları: \"load_capacity\" en büyük değer (19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.load_capacity.most",
+      "value": "350 kg",
+      "method": "Masaj Yatakları: \"load_capacity\" en sık değer (19/19 ürün)",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.cushion_thickness.values",
+      "value": "10cm / 10 cm",
+      "method": "Masaj Yatakları: \"cushion_thickness\" alanının katalogdaki farklı değerleri (15 ürün)",
+      "codes": [
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-020"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.cushion_thickness.min",
+      "value": "10 cm",
+      "method": "Masaj Yatakları: \"cushion_thickness\" en küçük değer (15 ürün)",
+      "codes": [
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-020"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.cushion_thickness.max",
+      "value": "10 cm",
+      "method": "Masaj Yatakları: \"cushion_thickness\" en büyük değer (15 ürün)",
+      "codes": [
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-020"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.cushion_thickness.most",
+      "value": "10 cm",
+      "method": "Masaj Yatakları: \"cushion_thickness\" en sık değer (15/15 ürün)",
+      "codes": [
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-020"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.motor_options.values",
+      "value": "sabit, tek, iki motorlu / üç motorlu",
+      "method": "Masaj Yatakları: \"motor_options\" alanının katalogdaki farklı değerleri (10 ürün)",
+      "codes": [
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-017",
+        "SD-018",
+        "SD-020"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.foam_density.values",
+      "value": "30 DNS / 28 DNS",
+      "method": "Masaj Yatakları: \"foam_density\" alanının katalogdaki farklı değerleri (8 ürün)",
+      "codes": [
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-018",
+        "SD-020"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.back_angle.values",
+      "value": "35°",
+      "method": "Masaj Yatakları: \"back_angle\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-013",
+        "SD-017"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.foot_angle.values",
+      "value": "25°",
+      "method": "Masaj Yatakları: \"foot_angle\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-013",
+        "SD-017"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.motor.sabit-tek-iki-motorlu",
+      "value": "7 adet",
+      "method": "Masaj Yatakları: motor bilgisi \"sabit, tek, iki motorlu\" olan ürün sayısı",
+      "codes": [
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-012",
+        "SD-018",
+        "SD-020"
+      ]
+    },
+    {
+      "id": "masaj-yataklari.motor.uc-motorlu",
+      "value": "3 adet",
+      "method": "Masaj Yatakları: motor bilgisi \"üç motorlu\" olan ürün sayısı",
+      "codes": [
+        "SD-013",
+        "SD-014",
+        "SD-017"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.count",
+      "value": "10 adet",
+      "method": "\"Dinlenme Yatakları\" kategorisindeki katalog ürünlerinin sayısı",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.width.values",
+      "value": "65 cm / 75 cm",
+      "method": "Dinlenme Yatakları: \"width\" alanının katalogdaki farklı değerleri (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.width.min",
+      "value": "65 cm",
+      "method": "Dinlenme Yatakları: \"width\" en küçük değer (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.width.max",
+      "value": "75 cm",
+      "method": "Dinlenme Yatakları: \"width\" en büyük değer (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.width.most",
+      "value": "65 cm",
+      "method": "Dinlenme Yatakları: \"width\" en sık değer (9/10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.length.values",
+      "value": "195 cm / 200 cm / 50 cm",
+      "method": "Dinlenme Yatakları: \"length\" alanının katalogdaki farklı değerleri (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.length.min",
+      "value": "50 cm",
+      "method": "Dinlenme Yatakları: \"length\" en küçük değer (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.length.max",
+      "value": "200 cm",
+      "method": "Dinlenme Yatakları: \"length\" en büyük değer (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.length.most",
+      "value": "200 cm",
+      "method": "Dinlenme Yatakları: \"length\" en sık değer (5/10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.height.values",
+      "value": "50 cm / 45 cm",
+      "method": "Dinlenme Yatakları: \"height\" alanının katalogdaki farklı değerleri (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.height.min",
+      "value": "45 cm",
+      "method": "Dinlenme Yatakları: \"height\" en küçük değer (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.height.max",
+      "value": "50 cm",
+      "method": "Dinlenme Yatakları: \"height\" en büyük değer (10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.height.most",
+      "value": "50 cm",
+      "method": "Dinlenme Yatakları: \"height\" en sık değer (5/10 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.back_height.values",
+      "value": "85 cm",
+      "method": "Dinlenme Yatakları: \"back_height\" alanının katalogdaki farklı değerleri (5 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.back_height.min",
+      "value": "85 cm",
+      "method": "Dinlenme Yatakları: \"back_height\" en küçük değer (5 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.back_height.max",
+      "value": "85 cm",
+      "method": "Dinlenme Yatakları: \"back_height\" en büyük değer (5 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.back_height.most",
+      "value": "85 cm",
+      "method": "Dinlenme Yatakları: \"back_height\" en sık değer (5/5 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-029",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.foam_density.values",
+      "value": "32 DNS",
+      "method": "Dinlenme Yatakları: \"foam_density\" alanının katalogdaki farklı değerleri (7 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-026",
+        "SD-028",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.cushion_thickness.values",
+      "value": "10 cm",
+      "method": "Dinlenme Yatakları: \"cushion_thickness\" alanının katalogdaki farklı değerleri (7 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-026",
+        "SD-028",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.cushion_thickness.min",
+      "value": "10 cm",
+      "method": "Dinlenme Yatakları: \"cushion_thickness\" en küçük değer (7 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-026",
+        "SD-028",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.cushion_thickness.max",
+      "value": "10 cm",
+      "method": "Dinlenme Yatakları: \"cushion_thickness\" en büyük değer (7 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-026",
+        "SD-028",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.cushion_thickness.most",
+      "value": "10 cm",
+      "method": "Dinlenme Yatakları: \"cushion_thickness\" en sık değer (7/7 ürün)",
+      "codes": [
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-026",
+        "SD-028",
+        "SD-030",
+        "SD-031"
+      ]
+    },
+    {
+      "id": "dinlenme-yataklari.backrest_manual_angle.values",
+      "value": "35°",
+      "method": "Dinlenme Yatakları: \"backrest_manual_angle\" alanının katalogdaki farklı değerleri (3 ürün)",
+      "codes": [
+        "SD-024",
+        "SD-026",
+        "SD-028"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.count",
+      "value": "6 adet",
+      "method": "\"Bakım ve Pedikür Koltukları\" kategorisindeki katalog ürünlerinin sayısı",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.width.values",
+      "value": "77 cm / 190 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"width\" alanının katalogdaki farklı değerleri (6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.width.min",
+      "value": "77 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"width\" en küçük değer (6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.width.max",
+      "value": "190 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"width\" en büyük değer (6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.width.most",
+      "value": "190 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"width\" en sık değer (4/6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.length.values",
+      "value": "180 cm / 140 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"length\" alanının katalogdaki farklı değerleri (6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.length.min",
+      "value": "140 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"length\" en küçük değer (6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.length.max",
+      "value": "180 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"length\" en büyük değer (6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.length.most",
+      "value": "140 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"length\" en sık değer (4/6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.height.values",
+      "value": "70 cm x 90 cm / 110 cm / 70x90 cm",
+      "method": "Bakım ve Pedikür Koltukları: \"height\" alanının katalogdaki farklı değerleri (6 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.load_capacity.values",
+      "value": "200 kg",
+      "method": "Bakım ve Pedikür Koltukları: \"load_capacity\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-034"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.load_capacity.min",
+      "value": "200 kg",
+      "method": "Bakım ve Pedikür Koltukları: \"load_capacity\" en küçük değer (2 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-034"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.load_capacity.max",
+      "value": "200 kg",
+      "method": "Bakım ve Pedikür Koltukları: \"load_capacity\" en büyük değer (2 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-034"
+      ]
+    },
+    {
+      "id": "bakim-ve-pedikur-koltuklari.load_capacity.most",
+      "value": "200 kg",
+      "method": "Bakım ve Pedikür Koltukları: \"load_capacity\" en sık değer (2/2 ürün)",
+      "codes": [
+        "SD-032",
+        "SD-034"
+      ]
+    },
+    {
+      "id": "manikur.count",
+      "value": "5 adet",
+      "method": "\"Manikür\" kategorisindeki katalog ürünlerinin sayısı",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-040",
+        "SD-041",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.height.values",
+      "value": "82 cm / 77-92 cm",
+      "method": "Manikür: \"height\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-040",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.length.values",
+      "value": "130 cm",
+      "method": "Manikür: \"length\" alanının katalogdaki farklı değerleri (3 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.length.min",
+      "value": "130 cm",
+      "method": "Manikür: \"length\" en küçük değer (3 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.length.max",
+      "value": "130 cm",
+      "method": "Manikür: \"length\" en büyük değer (3 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.length.most",
+      "value": "130 cm",
+      "method": "Manikür: \"length\" en sık değer (3/3 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.width.values",
+      "value": "55 cm / 67 cm",
+      "method": "Manikür: \"width\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-040",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.width.min",
+      "value": "55 cm",
+      "method": "Manikür: \"width\" en küçük değer (4 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-040",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.width.max",
+      "value": "67 cm",
+      "method": "Manikür: \"width\" en büyük değer (4 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-040",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "manikur.width.most",
+      "value": "55 cm",
+      "method": "Manikür: \"width\" en sık değer (3/4 ürün)",
+      "codes": [
+        "SD-038",
+        "SD-039",
+        "SD-040",
+        "SD-042"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.count",
+      "value": "5 adet",
+      "method": "\"Havlu ve Sterilizatörler\" kategorisindeki katalog ürünlerinin sayısı",
+      "codes": [
+        "SD-043",
+        "SD-044",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.dimensions.values",
+      "value": "Y.38,5 / G.49,5 / D.36,5",
+      "method": "Havlu ve Sterilizatörler: \"dimensions\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.inner_depth.values",
+      "value": "18.5 cm",
+      "method": "Havlu ve Sterilizatörler: \"inner_depth\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.inner_depth.min",
+      "value": "18.5 cm",
+      "method": "Havlu ve Sterilizatörler: \"inner_depth\" en küçük değer (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.inner_depth.max",
+      "value": "18.5 cm",
+      "method": "Havlu ve Sterilizatörler: \"inner_depth\" en büyük değer (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.inner_depth.most",
+      "value": "18.5 cm",
+      "method": "Havlu ve Sterilizatörler: \"inner_depth\" en sık değer (4/4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.inner_height.values",
+      "value": "25 cm",
+      "method": "Havlu ve Sterilizatörler: \"inner_height\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.inner_height.min",
+      "value": "25 cm",
+      "method": "Havlu ve Sterilizatörler: \"inner_height\" en küçük değer (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.inner_height.max",
+      "value": "25 cm",
+      "method": "Havlu ve Sterilizatörler: \"inner_height\" en büyük değer (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.inner_height.most",
+      "value": "25 cm",
+      "method": "Havlu ve Sterilizatörler: \"inner_height\" en sık değer (4/4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.weight.values",
+      "value": "6 kg",
+      "method": "Havlu ve Sterilizatörler: \"weight\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.weight.min",
+      "value": "6 kg",
+      "method": "Havlu ve Sterilizatörler: \"weight\" en küçük değer (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.weight.max",
+      "value": "6 kg",
+      "method": "Havlu ve Sterilizatörler: \"weight\" en büyük değer (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.weight.most",
+      "value": "6 kg",
+      "method": "Havlu ve Sterilizatörler: \"weight\" en sık değer (4/4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.heating.values",
+      "value": "70 °C – 80°C",
+      "method": "Havlu ve Sterilizatörler: \"heating\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.capacity_lt.values",
+      "value": "23 / 5, 16 veya Mini",
+      "method": "Havlu ve Sterilizatörler: \"capacity_lt\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.power_supply.values",
+      "value": "220 VOLT / HZ 50-60",
+      "method": "Havlu ve Sterilizatörler: \"power_supply\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.towel_capacity.values",
+      "value": "100 ila 120 adet",
+      "method": "Havlu ve Sterilizatörler: \"towel_capacity\" alanının katalogdaki farklı değerleri (4 ürün)",
+      "codes": [
+        "SD-043",
+        "SD-045",
+        "SD-046",
+        "SD-047"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.dimensions_mm.values",
+      "value": "382 x 445 x 510",
+      "method": "Havlu ve Sterilizatörler: \"dimensions_mm\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-044"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.cooling_range.values",
+      "value": "+2 /+8 derece",
+      "method": "Havlu ve Sterilizatörler: \"cooling_range\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-044"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.rated_ambient.values",
+      "value": "43 derece",
+      "method": "Havlu ve Sterilizatörler: \"rated_ambient\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-044"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.noise_level.values",
+      "value": "38/44 desibel",
+      "method": "Havlu ve Sterilizatörler: \"noise_level\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-044"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.energy_class.values",
+      "value": "A++ ve A+++",
+      "method": "Havlu ve Sterilizatörler: \"energy_class\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-044"
+      ]
+    },
+    {
+      "id": "havlu-ve-sterilizatorler.colours.values",
+      "value": "Beyaz, Siyah",
+      "method": "Havlu ve Sterilizatörler: \"colours\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-044"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.count",
+      "value": "5 adet",
+      "method": "\"Sıcak Taş ve Isıtıcılar\" kategorisindeki katalog ürünlerinin sayısı",
+      "codes": [
+        "SD-048",
+        "SD-049",
+        "SD-050",
+        "SD-051",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.voltage.values",
+      "value": "110V/220-250V",
+      "method": "Sıcak Taş ve Isıtıcılar: \"voltage\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-048"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.frequency.values",
+      "value": "50-60 Hz",
+      "method": "Sıcak Taş ve Isıtıcılar: \"frequency\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-048"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.power.values",
+      "value": "200W",
+      "method": "Sıcak Taş ve Isıtıcılar: \"power\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-048"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.pot_diameter.values",
+      "value": "12 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"pot_diameter\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-048"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.height.values",
+      "value": "12 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"height\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.height.min",
+      "value": "12 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"height\" en küçük değer (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.height.max",
+      "value": "12 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"height\" en büyük değer (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.height.most",
+      "value": "12 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"height\" en sık değer (2/2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.width.values",
+      "value": "25 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"width\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.width.min",
+      "value": "25 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"width\" en küçük değer (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.width.max",
+      "value": "25 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"width\" en büyük değer (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.width.most",
+      "value": "25 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"width\" en sık değer (2/2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.length.values",
+      "value": "40 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"length\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.length.min",
+      "value": "40 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"length\" en küçük değer (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.length.max",
+      "value": "40 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"length\" en büyük değer (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.length.most",
+      "value": "40 cm",
+      "method": "Sıcak Taş ve Isıtıcılar: \"length\" en sık değer (2/2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.heating_temperature.values",
+      "value": "55-80°",
+      "method": "Sıcak Taş ve Isıtıcılar: \"heating_temperature\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.heating.values",
+      "value": "220V/180W",
+      "method": "Sıcak Taş ve Isıtıcılar: \"heating\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-050",
+        "SD-052"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.net_weight.values",
+      "value": "8 kg",
+      "method": "Sıcak Taş ve Isıtıcılar: \"net_weight\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-051"
+      ]
+    },
+    {
+      "id": "sicak-tas-ve-isiticilar.accessory.values",
+      "value": "Tahta Kaşık",
+      "method": "Sıcak Taş ve Isıtıcılar: \"accessory\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-051"
+      ]
+    },
+    {
+      "id": "islak-alan.count",
+      "value": "3 adet",
+      "method": "\"Islak Alan\" kategorisindeki katalog ürünlerinin sayısı",
+      "codes": [
+        "SD-053",
+        "SD-054",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.width.values",
+      "value": "95 cm",
+      "method": "Islak Alan: \"width\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.width.min",
+      "value": "95 cm",
+      "method": "Islak Alan: \"width\" en küçük değer (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.width.max",
+      "value": "95 cm",
+      "method": "Islak Alan: \"width\" en büyük değer (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.width.most",
+      "value": "95 cm",
+      "method": "Islak Alan: \"width\" en sık değer (2/2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.length.values",
+      "value": "215 cm",
+      "method": "Islak Alan: \"length\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.length.min",
+      "value": "215 cm",
+      "method": "Islak Alan: \"length\" en küçük değer (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.length.max",
+      "value": "215 cm",
+      "method": "Islak Alan: \"length\" en büyük değer (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.length.most",
+      "value": "215 cm",
+      "method": "Islak Alan: \"length\" en sık değer (2/2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.height.values",
+      "value": "80 cm",
+      "method": "Islak Alan: \"height\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.height.min",
+      "value": "80 cm",
+      "method": "Islak Alan: \"height\" en küçük değer (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.height.max",
+      "value": "80 cm",
+      "method": "Islak Alan: \"height\" en büyük değer (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.height.most",
+      "value": "80 cm",
+      "method": "Islak Alan: \"height\" en sık değer (2/2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "islak-alan.shower_heads.values",
+      "value": "6 adet",
+      "method": "Islak Alan: \"shower_heads\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-053",
+        "SD-055"
+      ]
+    },
+    {
+      "id": "aksesuar.count",
+      "value": "7 adet",
+      "method": "\"Aksesuar\" kategorisindeki katalog ürünlerinin sayısı",
+      "codes": [
+        "SD-056",
+        "SD-057",
+        "SD-058",
+        "SD-059",
+        "SD-060",
+        "SD-061",
+        "SD-062"
+      ]
+    },
+    {
+      "id": "aksesuar.legs.values",
+      "value": "5 ayaklı",
+      "method": "Aksesuar: \"legs\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-056"
+      ]
+    },
+    {
+      "id": "aksesuar.led_count.values",
+      "value": "90 adet",
+      "method": "Aksesuar: \"led_count\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-056"
+      ]
+    },
+    {
+      "id": "aksesuar.magnification.values",
+      "value": "5X",
+      "method": "Aksesuar: \"magnification\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-056"
+      ]
+    },
+    {
+      "id": "aksesuar.dimensions.values",
+      "value": "40*40*60",
+      "method": "Aksesuar: \"dimensions\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-061"
+      ]
+    },
+    {
+      "id": "aksesuar.weight.values",
+      "value": "25 kg / 12 kg",
+      "method": "Aksesuar: \"weight\" alanının katalogdaki farklı değerleri (2 ürün)",
+      "codes": [
+        "SD-061",
+        "SD-062"
+      ]
+    },
+    {
+      "id": "aksesuar.weight.min",
+      "value": "12 kg",
+      "method": "Aksesuar: \"weight\" en küçük değer (2 ürün)",
+      "codes": [
+        "SD-061",
+        "SD-062"
+      ]
+    },
+    {
+      "id": "aksesuar.weight.max",
+      "value": "25 kg",
+      "method": "Aksesuar: \"weight\" en büyük değer (2 ürün)",
+      "codes": [
+        "SD-061",
+        "SD-062"
+      ]
+    },
+    {
+      "id": "aksesuar.weight.most",
+      "value": "25 kg",
+      "method": "Aksesuar: \"weight\" en sık değer (1/2 ürün)",
+      "codes": [
+        "SD-061",
+        "SD-062"
+      ]
+    },
+    {
+      "id": "aksesuar.construction.values",
+      "value": "Paslanmaz çelik gövde, PE plastik donanım",
+      "method": "Aksesuar: \"construction\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-061"
+      ]
+    },
+    {
+      "id": "aksesuar.power_supply.values",
+      "value": "220VAC-50Hz",
+      "method": "Aksesuar: \"power_supply\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-061"
+      ]
+    },
+    {
+      "id": "aksesuar.drying_time.values",
+      "value": "10 saniye",
+      "method": "Aksesuar: \"drying_time\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-061"
+      ]
+    },
+    {
+      "id": "aksesuar.moisture_removed.values",
+      "value": "%95",
+      "method": "Aksesuar: \"moisture_removed\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-061"
+      ]
+    },
+    {
+      "id": "aksesuar.width.values",
+      "value": "38 cm",
+      "method": "Aksesuar: \"width\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-062"
+      ]
+    },
+    {
+      "id": "aksesuar.height.values",
+      "value": "50-65 cm",
+      "method": "Aksesuar: \"height\" alanının katalogdaki farklı değerleri (1 ürün)",
+      "codes": [
+        "SD-062"
+      ]
+    },
+    {
+      "id": "catalog.count",
+      "value": "62 adet",
+      "method": "Katalogdaki toplam ürün sayısı",
+      "codes": [
+        "SD-001",
+        "SD-002",
+        "SD-003",
+        "SD-004",
+        "SD-005",
+        "SD-006",
+        "SD-007",
+        "SD-008",
+        "SD-009",
+        "SD-010",
+        "SD-011",
+        "SD-012",
+        "SD-013",
+        "SD-014",
+        "SD-015",
+        "SD-016",
+        "SD-017",
+        "SD-018",
+        "SD-019",
+        "SD-020",
+        "SD-021",
+        "SD-022",
+        "SD-023",
+        "SD-024",
+        "SD-025",
+        "SD-026",
+        "SD-027",
+        "SD-028",
+        "SD-029",
+        "SD-030",
+        "SD-031",
+        "SD-032",
+        "SD-033",
+        "SD-034",
+        "SD-035",
+        "SD-036",
+        "SD-037",
+        "SD-038",
+        "SD-039",
+        "SD-040",
+        "SD-041",
+        "SD-042",
+        "SD-043",
+        "SD-044",
+        "SD-045",
+        "SD-046",
+        "SD-047",
+        "SD-048",
+        "SD-049",
+        "SD-050",
+        "SD-051",
+        "SD-052",
+        "SD-053",
+        "SD-054",
+        "SD-055",
+        "SD-056",
+        "SD-057",
+        "SD-058",
+        "SD-059",
+        "SD-060",
+        "SD-061",
+        "SD-062"
+      ]
+    }
+  ]
+}

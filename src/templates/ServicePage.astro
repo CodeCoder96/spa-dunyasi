@@ -1,0 +1,195 @@
+---
+// Service page (SAB-07, ICR-08): hero image, H1, process steps, project types (body), FAQ, CTA.
+// No durations, prices, material brands or capacity figures.
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Icon from '../components/Icon.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { render } from 'astro:content';
+import { content } from '../lib/content.ts';
+import { byCode } from '../lib/catalog.ts';
+import { buildImage } from '../lib/images.ts';
+import { serviceHero } from '../lib/site-images.ts';
+import { absolute, breadcrumb, route as getRoute, type Route } from '../lib/routes.ts';
+import { orgSchema, breadcrumbSchema, faqSchema, serviceSchema } from '../lib/schema.ts';
+import { marked } from '../lib/inline-md.ts';
+import { telLink, waLink, waMessage } from '../lib/contact.ts';
+import { site } from '../../site.config.ts';
+import { t } from '../i18n/ui.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const entry = await content('services', lang, route.key);
+const fm = entry?.data;
+const { Content } = entry ? await render(entry) : { Content: null };
+const url = absolute(route.path);
+const wa = { kind: 'service', name: route.title, url } as const;
+const hero = serviceHero(route.key);
+const heroSizes = '(width >= 1280px) 1280px, 100vw';
+const built = await buildImage(hero.src, 1600);
+const related = (fm?.relatedProducts ?? []).map((c) => byCode.get(c)).filter((p) => p !== undefined);
+const description = fm?.description ?? `${route.title}: ${site.facts.projectService[lang]}.`;
+const schema = [...orgSchema(), serviceSchema(route.title, description, url, lang), breadcrumbSchema(breadcrumb(route)), ...(fm?.faq?.length ? [faqSchema(fm.faq, lang)] : [])];
+const others = ['sauna', 'hamam', 'buhar-odasi', 'havuz'].filter((k) => k !== route.key).map((k) => getRoute(lang, `hizmet:${k}`));
+---
+
+<Base route={route} title={fm?.title ?? route.title} description={description} wa={wa} schema={schema} preload={{ srcset: built.avif, sizes: heroSizes }} ogImage={{ path: `/og/hizmet-${route.key}.jpg`, alt: hero.alt[lang] }}>
+  <div class="container svc-head">
+    <p class="eyebrow">{site.facts.projectService[lang]}</p>
+    <h1>{route.title}</h1>
+    {fm?.intro && <p class="lead" set:html={marked(fm.intro, lang)} />}
+    <div class="svc-head__actions">
+      <a class="btn" href={waLink(waMessage(lang, wa))} target="_blank" rel="noopener" data-cta="inline"><Icon name="whatsapp" />{t(lang, 'cta.whatsapp')}</a>
+      <a class="btn btn--ghost" href={telLink()} data-cta="inline" data-phone-line="mobil_1"><Icon name="phone" />{t(lang, 'cta.call')}</a>
+    </div>
+  </div>
+  <div class="container svc-hero">
+    <Img src={hero.src} alt={hero.alt[lang]} sizes={heroSizes} priority />
+  </div>
+
+  {
+    fm?.steps && (
+      <section class="section" aria-labelledby="steps-title">
+        <div class="container">
+          <h2 id="steps-title" class="svc-h2">{t(lang, 'service.process')}</h2>
+          <ol role="list" class="svc-steps">
+            {fm.steps.map((s, i) => (
+              <li class="svc-steps__item">
+                <span class="svc-steps__n" aria-hidden="true">
+                  {i + 1}
+                </span>
+                <h3>{s.title}</h3>
+                <p set:html={marked(s.text, lang)} />
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    Content && (
+      <section class="section section--sand">
+        <div class="container">
+          <div class="prose">
+            <Content />
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    related.length > 0 && (
+      <section class="section" aria-labelledby="svc-rel-title">
+        <div class="container">
+          <h2 id="svc-rel-title" class="svc-h2">{t(lang, 'product.related')}</h2>
+          <div class="grid-cards">
+            {related.map((p) => <ProductCard product={p!} lang={lang} />)}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {
+    fm?.faq && (
+      <div class="container section">
+        <Faq items={fm.faq} title={t(lang, 'product.faq')} lang={lang} />
+      </div>
+    )
+  }
+
+  <nav class="container svc-others" aria-label={t(lang, 'nav.services')}>
+    <ul role="list">
+      {others.map((o) => <li><a href={o.path}>{o.title}</a></li>)}
+    </ul>
+  </nav>
+
+  <CtaBand lang={lang} wa={wa} />
+</Base>
+
+<style>
+  @layer components {
+    .svc-head {
+      display: grid;
+      gap: var(--s-4);
+      padding-block: var(--s-6) var(--s-8);
+    }
+
+    .svc-head__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+    }
+
+    .svc-hero {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+
+    .svc-hero :global(.img) {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-card);
+      overflow: hidden;
+    }
+
+    .svc-h2 {
+      margin-bottom: var(--s-6);
+    }
+
+    .svc-steps {
+      display: grid;
+      gap: var(--s-5);
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    }
+
+    .svc-steps__item {
+      display: grid;
+      gap: var(--s-2);
+      align-content: start;
+      padding: var(--s-5);
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-card);
+    }
+
+    .svc-steps__item h3 {
+      font-size: 1.25rem;
+    }
+
+    .svc-steps__item p {
+      color: var(--c-ink-2);
+    }
+
+    .svc-steps__n {
+      display: inline-grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-pill);
+      background: var(--c-primary);
+      color: var(--c-on-primary);
+      font-weight: 600;
+    }
+
+    .svc-others ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2) var(--s-6);
+    }
+
+    .svc-others a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+  }
+</style>

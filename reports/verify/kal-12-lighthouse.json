@@ -1,0 +1,129 @@
+{
+  "id": "kal-12-lighthouse",
+  "title": "Lighthouse mobil (PER-01 sayfaları)",
+  "errors": [],
+  "warnings": [
+    "404: en iyi uygulamalar 96 (errors-in-console)"
+  ],
+  "info": {
+    "rows": [
+      {
+        "name": "tr-home",
+        "path": "/",
+        "perf": 100,
+        "a11y": 100,
+        "bp": 100,
+        "seo": 100,
+        "lcp": 1806.6084,
+        "cls": 0.0007871008233697848,
+        "tbt": 0,
+        "failedBp": [],
+        "failedSeo": []
+      },
+      {
+        "name": "en-home",
+        "path": "/en/",
+        "perf": 99,
+        "a11y": 100,
+        "bp": 100,
+        "seo": 100,
+        "lcp": 1806.1532000000002,
+        "cls": 0.0007871008233697848,
+        "tbt": 0,
+        "failedBp": [],
+        "failedSeo": []
+      },
+      {
+        "name": "category",
+        "path": "/masaj-yataklari.html",
+        "perf": 99,
+        "a11y": 100,
+        "bp": 100,
+        "seo": 100,
+        "lcp": 1805.336,
+        "cls": 0.0007871008233697848,
+        "tbt": 0,
+        "failedBp": [],
+        "failedSeo": []
+      },
+      {
+        "name": "product-studio",
+        "path": "/brand-cilt-bakim-koltugu.html",
+        "perf": 99,
+        "a11y": 100,
+        "bp": 100,
+        "seo": 100,
+        "lcp": 1805.9832999999999,
+        "cls": 0.0007871008233697848,
+        "tbt": 0,
+        "failedBp": [],
+        "failedSeo": []
+      },
+      {
+        "name": "product-scene",
+        "path": "/mercury-dinlenme-yatagi.html",
+        "perf": 99,
+        "a11y": 100,
+        "bp": 100,
+        "seo": 100,
+        "lcp": 1805.8139999999999,
+        "cls": 0.0007871008233697848,
+        "tbt": 0,
+        "failedBp": [],
+        "failedSeo": []
+      },
+      {
+        "name": "guide",
+        "path": "/masaj-yatagi-secimi.html",
+        "perf": 100,
+        "a11y": 100,
+        "bp": 100,
+        "seo": 100,
+        "lcp": 1504.9414000000002,
+        "cls": 0.0007871008233697848,
+        "tbt": 0,
+        "failedBp": [],
+        "failedSeo": []
+      },
+      {
+        "name": "contact",
+        "path": "/iletisim.html",
+        "perf": 100,
+        "a11y": 100,
+        "bp": 100,
+        "seo": 100,
+        "lcp": 1504.7037,
+        "cls": 0.0007871008233697848,
+        "tbt": 0,
+        "failedBp": [],
+        "failedSeo": []
+      },
+      {
+        "name": "404",
+        "path": "/lighthouse-olmayan-sayfa.html",
+        "perf": 100,
+        "a11y": 100,
+        "bp": 96,
+        "seo": 58,
+        "lcp": 1505.0005,
+        "cls": 0.0007871008233697848,
+        "tbt": 0,
+        "failedBp": [
+          {
+            "id": "errors-in-console",
+            "items": [
+              "Failed to load resource: the server responded with a status of 404 (Not Found)"
+            ]
+          }
+        ],
+        "failedSeo": [
+          "http-status-code",
+          "is-crawlable"
+        ]
+      }
+    ]
+  },
+  "ms": 345660,
+  "ok": true,
+  "at": "2026-10-04T00:42:24.663Z"
+}

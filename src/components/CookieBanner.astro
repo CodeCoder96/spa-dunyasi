@@ -1,0 +1,63 @@
+---
+// Cookie banner (ANL-03): rendered only when a GA4 id is configured. Fixed, compact, above the mobile bar.
+// Equal-weight Accept/Reject buttons; logic in src/scripts/consent.ts.
+import { href } from '../lib/routes.ts';
+import { t, type Lang } from '../i18n/ui.ts';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+---
+
+<section class="cookie-banner no-print" aria-label={t(lang, 'cookie.label')} hidden data-cookie-banner>
+  <p class="cookie-banner__text">
+    {t(lang, 'cookie.text')}
+    <a href={href(lang, 'sayfa:cerez')}>{t(lang, 'cookie.policy')}</a>
+  </p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn btn--sm btn--ghost" data-consent="denied">{t(lang, 'cookie.reject')}</button>
+    <button type="button" class="btn btn--sm btn--ghost" data-consent="granted">{t(lang, 'cookie.accept')}</button>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    .cookie-banner {
+      position: fixed;
+      left: var(--s-3);
+      right: var(--s-3);
+      bottom: calc(var(--mobile-bar-space) + var(--s-3));
+      z-index: var(--z-cookie);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--s-3) var(--s-4);
+      max-width: 720px;
+      margin-inline: auto;
+      padding: var(--s-4);
+      background: var(--c-surface);
+      border: var(--border);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow-header);
+      font-size: var(--fs-small);
+    }
+
+    .cookie-banner[hidden] {
+      display: none;
+    }
+
+    .cookie-banner__text {
+      flex: 1 1 280px;
+    }
+
+    .cookie-banner__actions {
+      display: flex;
+      gap: var(--s-2);
+    }
+  }
+</style>
+
+<script>
+  import '../scripts/consent.ts';
+</script>

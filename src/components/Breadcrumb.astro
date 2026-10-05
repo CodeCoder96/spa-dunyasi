@@ -1,0 +1,70 @@
+---
+// Breadcrumb (MIM-11, ERS-06): nav[aria-label] > ol, last item aria-current="page".
+// The same list feeds BreadcrumbList JSON-LD (SEO-08).
+import type { Route } from '../lib/routes.ts';
+import { t } from '../i18n/ui.ts';
+
+interface Props {
+  items: Route[];
+}
+const { items } = Astro.props;
+const lang = items[0]!.lang;
+---
+
+<nav class="breadcrumb container no-print" aria-label={t(lang, 'nav.breadcrumb')}>
+  <ol role="list">
+    {
+      items.map((r, i) =>
+        i === items.length - 1 ? (
+          <li>
+            <span aria-current="page">{r.title}</span>
+          </li>
+        ) : (
+          <li>
+            <a href={r.path}>{r.title}</a>
+          </li>
+        ),
+      )
+    }
+  </ol>
+</nav>
+
+<style>
+  @layer components {
+    .breadcrumb {
+      padding-block: var(--s-4) 0;
+      font-size: var(--fs-small);
+      color: var(--c-ink-2);
+    }
+
+    .breadcrumb ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0 var(--s-2);
+    }
+
+    .breadcrumb li {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--s-2);
+    }
+
+    .breadcrumb li + li::before {
+      content: '/';
+      color: var(--c-line);
+    }
+
+    .breadcrumb a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      color: var(--c-ink-2);
+    }
+
+    .breadcrumb [aria-current] {
+      color: var(--c-ink);
+      overflow-wrap: anywhere;
+    }
+  }
+</style>

@@ -1,0 +1,144 @@
+---
+// Category page (SAB-05): breadcrumb, H1, ≤80-word intro, grid, long text, price section (ICR-06), FAQ,
+// related guides and services, CTA.
+import Base from '../layouts/Base.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import Icon from '../components/Icon.astro';
+import { render } from 'astro:content';
+import { productsIn } from '../lib/catalog.ts';
+import { CATEGORY_META } from '../lib/categories.ts';
+import { content } from '../lib/content.ts';
+import { CATEGORY_GUIDES } from '../lib/related.ts';
+import { absolute, breadcrumb, href, route as getRoute, type Route } from '../lib/routes.ts';
+import { orgSchema, breadcrumbSchema, faqSchema, itemListSchema, pageSchema } from '../lib/schema.ts';
+import { marked } from '../lib/inline-md.ts';
+import { telLink, waLink, waMessage } from '../lib/contact.ts';
+import { t } from '../i18n/ui.ts';
+import type { CategoryId } from '../lib/catalog-schema.ts';
+
+interface Props {
+  route: Route;
+}
+const { route } = Astro.props;
+const lang = route.lang;
+const id = route.key as CategoryId;
+const meta = CATEGORY_META[id];
+const items = productsIn(id);
+const entry = await content('categories', lang, id);
+const fm = entry?.data;
+const { Content } = entry ? await render(entry) : { Content: null };
+const url = absolute(route.path);
+const wa = { kind: 'category', name: meta.name[lang], url } as const;
+const guides = (fm?.relatedGuides ?? CATEGORY_GUIDES[id]).map((k) => getRoute(lang, `rehber:${k}`));
+const services = (fm?.relatedServices ?? []).map((k) => getRoute(lang, `hizmet:${k}`));
+const schema = [
+  ...orgSchema(),
+  pageSchema('CollectionPage', meta.name[lang], url, lang),
+  breadcrumbSchema(breadcrumb(route)),
+  itemListSchema(items.map((p) => ({ name: p.name[lang], url: absolute(href(lang, `urun:${p.code}`)) })), meta.name[lang]),
+  ...(fm?.faq?.length ? [faqSchema(fm.faq, lang)] : []),
+];
+---
+
+<Base route={route} title={fm?.title ?? meta.name[lang]} description={fm?.description ?? `${meta.name[lang]}. ${t(lang, 'cta.whatsapp')}.`} wa={wa} schema={schema}>
+  <div class="container page-head">
+    <p class="eyebrow">{t(lang, 'category.products', { n: items.length })}</p>
+    <h1>{meta.name[lang]}</h1>
+    {fm?.intro && <p class="lead" set:html={marked(fm.intro, lang)} />}
+  </div>
+
+  <section class="container cat-grid" aria-label={meta.name[lang]}>
+    <div class="grid-cards">
+      {items.map((p) => <ProductCard product={p} lang={lang} headingLevel="h2" />)}
+    </div>
+  </section>
+
+  {
+    Content && (
+      <section class="section">
+        <div class="container">
+          <div class="prose">
+            <Content />
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <section class="container cat-price" aria-labelledby="price-title">
+    <div class="cat-price__box">
+      <h2 id="price-title">{t(lang, 'category.priceTitle', { name: meta.name[lang] })}</h2>
+      <p>{t(lang, 'category.priceText', { name: meta.name[lang] })}</p>
+      <div class="cat-price__actions">
+        <a class="btn" href={waLink(waMessage(lang, wa))} target="_blank" rel="noopener" data-cta="inline"><Icon name="whatsapp" />{t(lang, 'cta.whatsapp')}</a>
+        <a class="btn btn--ghost" href={telLink()} data-cta="inline" data-phone-line="mobil_1"><Icon name="phone" />{t(lang, 'cta.call')}</a>
+      </div>
+    </div>
+  </section>
+
+  {
+    fm?.faq && (
+      <div class="container section">
+        <Faq items={fm.faq} title={t(lang, 'product.faq')} lang={lang} />
+      </div>
+    )
+  }
+
+  <section class="container cat-related" aria-labelledby="rel-title">
+    <h2 id="rel-title">{t(lang, 'category.related')}</h2>
+    <ul role="list">
+      {guides.map((g) => <li><a href={g.path}>{g.title}</a></li>)}
+      {services.map((s) => <li><a href={s.path}>{s.title}</a></li>)}
+    </ul>
+  </section>
+
+  <CtaBand lang={lang} wa={wa} />
+</Base>
+
+<style>
+  @layer components {
+    .page-head {
+      display: grid;
+      gap: var(--s-4);
+      padding-block: var(--s-6) var(--s-8);
+    }
+
+    .cat-grid {
+      padding-bottom: var(--s-8);
+    }
+
+    .cat-price__box {
+      display: grid;
+      gap: var(--s-3);
+      max-width: 820px;
+      padding: var(--s-6);
+      background: var(--c-sand);
+      border-radius: var(--radius-card);
+    }
+
+    .cat-price__box h2,
+    .cat-related h2 {
+      font-size: var(--fs-h3);
+    }
+
+    .cat-price__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+    }
+
+    .cat-related {
+      display: grid;
+      gap: var(--s-3);
+      padding-block: var(--s-8) 0;
+    }
+
+    .cat-related a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+    }
+  }
+</style>

@@ -1,0 +1,736 @@
+{
+  "discoveredAt": "2026-10-03T16:51:49.590Z",
+  "total": 59,
+  "archiveExcluded": [
+    "https://www.spaworld.com.tr/portfolios/"
+  ],
+  "otherSitemaps": {
+    "post-sitemap.xml": [
+      "https://www.spaworld.com.tr/blog/",
+      "https://www.spaworld.com.tr/pedikur-spa/",
+      "https://www.spaworld.com.tr/thai-masaj-yataklari/",
+      "https://www.spaworld.com.tr/spa-ekipmanlari/",
+      "https://www.spaworld.com.tr/spa-icin-hersey-spa-worldte/",
+      "https://www.spaworld.com.tr/dinlenme-yataklari-spa/",
+      "https://www.spaworld.com.tr/ozon-kapsulu/",
+      "https://www.spaworld.com.tr/masaj-yataklari/",
+      "https://www.spaworld.com.tr/masaj-sedyesi/",
+      "https://www.spaworld.com.tr/islak-hacimler/"
+    ],
+    "page-sitemap.xml": [
+      "https://www.spaworld.com.tr/",
+      "https://www.spaworld.com.tr/manikur/",
+      "https://www.spaworld.com.tr/pedikur-urunleri/",
+      "https://www.spaworld.com.tr/spa-world-spa-wellness-equipments/",
+      "https://www.spaworld.com.tr/contact-us/",
+      "https://www.spaworld.com.tr/about-us/",
+      "https://www.spaworld.com.tr/products/",
+      "https://www.spaworld.com.tr/hakkimizda/",
+      "https://www.spaworld.com.tr/iletisim/",
+      "https://www.spaworld.com.tr/urunlerimiz/",
+      "https://www.spaworld.com.tr/hizmetlerimiz/",
+      "https://www.spaworld.com.tr/referanslar/",
+      "https://www.spaworld.com.tr/masaj-bakim-terapi-yataklari/",
+      "https://www.spaworld.com.tr/sadsads/",
+      "https://www.spaworld.com.tr/cilt-bakim-analiz-cihazlari/",
+      "https://www.spaworld.com.tr/dinlenme-yataklari/",
+      "https://www.spaworld.com.tr/sicak-tas-isitici-setler/",
+      "https://www.spaworld.com.tr/havlu-steril-cihazlari/",
+      "https://www.spaworld.com.tr/tabureler/",
+      "https://www.spaworld.com.tr/bakim-koltuklari-yataklari/",
+      "https://www.spaworld.com.tr/homepage/"
+    ],
+    "service-sitemap.xml": [
+      "https://www.spaworld.com.tr/services/",
+      "https://www.spaworld.com.tr/services/havuz-imalati/",
+      "https://www.spaworld.com.tr/services/hamam-imalati/",
+      "https://www.spaworld.com.tr/services/sauna-imalati/",
+      "https://www.spaworld.com.tr/services/buhar-odasi/",
+      "https://www.spaworld.com.tr/services/bath-services/",
+      "https://www.spaworld.com.tr/services/sauna-manufacturing/",
+      "https://www.spaworld.com.tr/services/steam-room/",
+      "https://www.spaworld.com.tr/services/pool-services/"
+    ],
+    "team-sitemap.xml": [
+      "https://www.spaworld.com.tr/teams/",
+      "https://www.spaworld.com.tr/teams/rosalina-d-william/",
+      "https://www.spaworld.com.tr/teams/georgie-haynes/",
+      "https://www.spaworld.com.tr/teams/mary-elizabeth/",
+      "https://www.spaworld.com.tr/teams/borhan-zonson/",
+      "https://www.spaworld.com.tr/teams/habib-owahid/",
+      "https://www.spaworld.com.tr/teams/muntasin-rana/"
+    ],
+    "blocks-sitemap.xml": [
+      "https://www.spaworld.com.tr/blocks/",
+      "https://www.spaworld.com.tr/blocks/home-01-about-us-tab/",
+      "https://www.spaworld.com.tr/blocks/home-2-about-tab/",
+      "https://www.spaworld.com.tr/blocks/product-section/",
+      "https://www.spaworld.com.tr/blocks/about-tab/"
+    ],
+    "tw-header-builder-sitemap.xml": [
+      "https://www.spaworld.com.tr/header-builder/",
+      "https://www.spaworld.com.tr/header-builder/header-02/",
+      "https://www.spaworld.com.tr/header-builder/header-03/",
+      "https://www.spaworld.com.tr/header-builder/header-04/",
+      "https://www.spaworld.com.tr/header-builder/header-01/",
+      "https://www.spaworld.com.tr/header-builder/header-05/",
+      "https://www.spaworld.com.tr/header-builder/header-en/"
+    ],
+    "tw-footer-builder-sitemap.xml": [
+      "https://www.spaworld.com.tr/footer-template/",
+      "https://www.spaworld.com.tr/footer-template/footer-white-02/",
+      "https://www.spaworld.com.tr/footer-template/footer-dark/",
+      "https://www.spaworld.com.tr/footer-template/footer-white/",
+      "https://www.spaworld.com.tr/footer-template/footer-eng/"
+    ],
+    "category-sitemap.xml": [
+      "https://www.spaworld.com.tr/category/islak-hacimler/",
+      "https://www.spaworld.com.tr/category/pedikur-spa/",
+      "https://www.spaworld.com.tr/category/spa/",
+      "https://www.spaworld.com.tr/category/thai-masaj-yataklari/"
+    ],
+    "post_tag-sitemap.xml": [
+      "https://www.spaworld.com.tr/tag/dinlenme/",
+      "https://www.spaworld.com.tr/tag/dinlenme-yataklari/",
+      "https://www.spaworld.com.tr/tag/ekipmanlar/",
+      "https://www.spaworld.com.tr/tag/hacimler/",
+      "https://www.spaworld.com.tr/tag/islak/",
+      "https://www.spaworld.com.tr/tag/islak-hacimler/",
+      "https://www.spaworld.com.tr/tag/kapsulu/",
+      "https://www.spaworld.com.tr/tag/masaj/",
+      "https://www.spaworld.com.tr/tag/masaj-sedyesi/",
+      "https://www.spaworld.com.tr/tag/masaj-yataklari/",
+      "https://www.spaworld.com.tr/tag/ozon/",
+      "https://www.spaworld.com.tr/tag/ozonkapsulu/",
+      "https://www.spaworld.com.tr/tag/pedikur/",
+      "https://www.spaworld.com.tr/tag/pedikur-spa/",
+      "https://www.spaworld.com.tr/tag/sedyesi/",
+      "https://www.spaworld.com.tr/tag/spa/",
+      "https://www.spaworld.com.tr/tag/spa-ekipmanlari/",
+      "https://www.spaworld.com.tr/tag/spaworld-thai-masaj-yataklari/",
+      "https://www.spaworld.com.tr/tag/thai/",
+      "https://www.spaworld.com.tr/tag/thai-masaj-yatagi/",
+      "https://www.spaworld.com.tr/tag/thai-masaj-yataklari/",
+      "https://www.spaworld.com.tr/tag/yataklari/"
+    ],
+    "folio_cat-sitemap.xml": [
+      "https://www.spaworld.com.tr/folio_cat/cilt-bakim-analiz-cihazlari/",
+      "https://www.spaworld.com.tr/folio_cat/dinlenme-yataklari/",
+      "https://www.spaworld.com.tr/folio_cat/havlu-ve-steril-cihazlari/",
+      "https://www.spaworld.com.tr/folio_cat/islak-hacim-gorsel/",
+      "https://www.spaworld.com.tr/folio_cat/manikur/",
+      "https://www.spaworld.com.tr/folio_cat/masaj-terapi-yataklari/",
+      "https://www.spaworld.com.tr/folio_cat/pedikur/",
+      "https://www.spaworld.com.tr/folio_cat/sicak-tas-isitici-setler/",
+      "https://www.spaworld.com.tr/folio_cat/tabureler/",
+      "https://www.spaworld.com.tr/folio_cat/yardimci/"
+    ],
+    "author-sitemap.xml": [
+      "https://www.spaworld.com.tr/author/admin/"
+    ]
+  },
+  "categories": {
+    "cilt-bakim-analiz-cihazlari": [
+      "https://www.spaworld.com.tr/portfolios/afuzyondus-mozaik-ve-mermer/",
+      "https://www.spaworld.com.tr/portfolios/afuzyondus-wood/",
+      "https://www.spaworld.com.tr/portfolios/brand-bakim-koltugu/",
+      "https://www.spaworld.com.tr/portfolios/ozon-kapsul/",
+      "https://www.spaworld.com.tr/portfolios/podology-care-chair/"
+    ],
+    "dinlenme-yataklari": [
+      "https://www.spaworld.com.tr/portfolios/evony-dinlenme-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/light-dinlenme-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/mercury/",
+      "https://www.spaworld.com.tr/portfolios/mermer-dinlenme-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/moon/",
+      "https://www.spaworld.com.tr/portfolios/mozaik-dinlenme-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/odessa/",
+      "https://www.spaworld.com.tr/portfolios/rattan-sezlong/",
+      "https://www.spaworld.com.tr/portfolios/uranus-dinlenme-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/venus-dinlenme-yatagi/"
+    ],
+    "havlu-ve-steril-cihazlari": [
+      "https://www.spaworld.com.tr/portfolios/havlu-isitici/",
+      "https://www.spaworld.com.tr/portfolios/havlu-sogutucu/",
+      "https://www.spaworld.com.tr/portfolios/steril-cihazi/",
+      "https://www.spaworld.com.tr/portfolios/towel-warmer-wood/",
+      "https://www.spaworld.com.tr/portfolios/towel-warmer/"
+    ],
+    "islak-hacim-gorsel": [
+      "https://www.spaworld.com.tr/portfolios/islak-hacim-urunleri/"
+    ],
+    "manikur": [
+      "https://www.spaworld.com.tr/portfolios/manikur-koltugu/",
+      "https://www.spaworld.com.tr/portfolios/manikur-masasi-glass/",
+      "https://www.spaworld.com.tr/portfolios/manikur-masasi-light/",
+      "https://www.spaworld.com.tr/portfolios/manikur-masasi-wood/",
+      "https://www.spaworld.com.tr/portfolios/mini-manikur-masasi/"
+    ],
+    "masaj-terapi-yataklari": [
+      "https://www.spaworld.com.tr/portfolios/avant-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/ayurveda-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/base-w-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/base-x-cube-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/base-x-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/base-x-square-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/classic-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/comfort-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/dynamic-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/high-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/kafa-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/line-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/lux-soft-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/nice-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/soft-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/space-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/thai-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/trend-masaj-yatagi/",
+      "https://www.spaworld.com.tr/portfolios/trend-tuz-kum-yatagi/"
+    ],
+    "pedikur": [
+      "https://www.spaworld.com.tr/portfolios/pedikur-light/",
+      "https://www.spaworld.com.tr/portfolios/pedikur-spa-life/",
+      "https://www.spaworld.com.tr/portfolios/pedikur-spa/",
+      "https://www.spaworld.com.tr/portfolios/pedikur-wood/"
+    ],
+    "sicak-tas-isitici-setler": [
+      "https://www.spaworld.com.tr/portfolios/tas-isitici-cihazi-pan/",
+      "https://www.spaworld.com.tr/portfolios/tas-seti-volkanik/",
+      "https://www.spaworld.com.tr/portfolios/yag-ve-tas-isitici-cihazi/"
+    ],
+    "tabureler": [
+      "https://www.spaworld.com.tr/portfolios/tabure/"
+    ],
+    "yardimci": [
+      "https://www.spaworld.com.tr/portfolios/agda-isitici/",
+      "https://www.spaworld.com.tr/portfolios/bolster/",
+      "https://www.spaworld.com.tr/portfolios/etejer/",
+      "https://www.spaworld.com.tr/portfolios/mayo-kurutucu/",
+      "https://www.spaworld.com.tr/portfolios/yardimci-urunler/"
+    ]
+  },
+  "products": [
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/afuzyondus-mozaik-ve-mermer/",
+      "slug": "afuzyondus-mozaik-ve-mermer",
+      "sources": [
+        "anasayfa",
+        "kategori:cilt-bakim-analiz-cihazlari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/afuzyondus-wood/",
+      "slug": "afuzyondus-wood",
+      "sources": [
+        "kategori:cilt-bakim-analiz-cihazlari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/agda-isitici/",
+      "slug": "agda-isitici",
+      "sources": [
+        "kategori:yardimci",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/avant-masaj-yatagi/",
+      "slug": "avant-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/ayurveda-masaj-yatagi/",
+      "slug": "ayurveda-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/base-w-masaj-yatagi/",
+      "slug": "base-w-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/base-x-cube-masaj-yatagi/",
+      "slug": "base-x-cube-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/base-x-masaj-yatagi/",
+      "slug": "base-x-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/base-x-square-masaj-yatagi/",
+      "slug": "base-x-square-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/bolster/",
+      "slug": "bolster",
+      "sources": [
+        "kategori:yardimci",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/brand-bakim-koltugu/",
+      "slug": "brand-bakim-koltugu",
+      "sources": [
+        "anasayfa",
+        "kategori:cilt-bakim-analiz-cihazlari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/classic-masaj-yatagi/",
+      "slug": "classic-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/comfort-masaj-yatagi/",
+      "slug": "comfort-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/dynamic-masaj-yatagi/",
+      "slug": "dynamic-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/etejer/",
+      "slug": "etejer",
+      "sources": [
+        "anasayfa",
+        "kategori:yardimci",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/evony-dinlenme-yatagi/",
+      "slug": "evony-dinlenme-yatagi",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/havlu-isitici/",
+      "slug": "havlu-isitici",
+      "sources": [
+        "kategori:havlu-ve-steril-cihazlari",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/havlu-sogutucu/",
+      "slug": "havlu-sogutucu",
+      "sources": [
+        "kategori:havlu-ve-steril-cihazlari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/high-masaj-yatagi/",
+      "slug": "high-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/islak-hacim-urunleri/",
+      "slug": "islak-hacim-urunleri",
+      "sources": [
+        "anasayfa",
+        "kategori:islak-hacim-gorsel",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/kafa-masaj-yatagi/",
+      "slug": "kafa-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/light-dinlenme-yatagi/",
+      "slug": "light-dinlenme-yatagi",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/line-masaj-yatagi/",
+      "slug": "line-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/lux-soft-masaj-yatagi/",
+      "slug": "lux-soft-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/manikur-koltugu/",
+      "slug": "manikur-koltugu",
+      "sources": [
+        "kategori:manikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/manikur-masasi-glass/",
+      "slug": "manikur-masasi-glass",
+      "sources": [
+        "kategori:manikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/manikur-masasi-light/",
+      "slug": "manikur-masasi-light",
+      "sources": [
+        "kategori:manikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/manikur-masasi-wood/",
+      "slug": "manikur-masasi-wood",
+      "sources": [
+        "kategori:manikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/mayo-kurutucu/",
+      "slug": "mayo-kurutucu",
+      "sources": [
+        "kategori:yardimci",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/mercury/",
+      "slug": "mercury",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/mermer-dinlenme-yatagi/",
+      "slug": "mermer-dinlenme-yatagi",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/mini-manikur-masasi/",
+      "slug": "mini-manikur-masasi",
+      "sources": [
+        "kategori:manikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/moon/",
+      "slug": "moon",
+      "sources": [
+        "anasayfa",
+        "kategori:dinlenme-yataklari",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/mozaik-dinlenme-yatagi/",
+      "slug": "mozaik-dinlenme-yatagi",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/nice-masaj-yatagi/",
+      "slug": "nice-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/odessa/",
+      "slug": "odessa",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/ozon-kapsul/",
+      "slug": "ozon-kapsul",
+      "sources": [
+        "kategori:cilt-bakim-analiz-cihazlari",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/pedikur-light/",
+      "slug": "pedikur-light",
+      "sources": [
+        "kategori:pedikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/pedikur-spa-life/",
+      "slug": "pedikur-spa-life",
+      "sources": [
+        "kategori:pedikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/pedikur-spa/",
+      "slug": "pedikur-spa",
+      "sources": [
+        "kategori:pedikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/pedikur-wood/",
+      "slug": "pedikur-wood",
+      "sources": [
+        "kategori:pedikur",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/podology-care-chair/",
+      "slug": "podology-care-chair",
+      "sources": [
+        "kategori:cilt-bakim-analiz-cihazlari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/rattan-sezlong/",
+      "slug": "rattan-sezlong",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/soft-masaj-yatagi/",
+      "slug": "soft-masaj-yatagi",
+      "sources": [
+        "anasayfa",
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/space-masaj-yatagi/",
+      "slug": "space-masaj-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/steril-cihazi/",
+      "slug": "steril-cihazi",
+      "sources": [
+        "kategori:havlu-ve-steril-cihazlari",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/tabure/",
+      "slug": "tabure",
+      "sources": [
+        "kategori:tabureler",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/tas-isitici-cihazi-pan/",
+      "slug": "tas-isitici-cihazi-pan",
+      "sources": [
+        "kategori:sicak-tas-isitici-setler",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/tas-seti-volkanik/",
+      "slug": "tas-seti-volkanik",
+      "sources": [
+        "kategori:sicak-tas-isitici-setler",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/thai-yatagi/",
+      "slug": "thai-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/towel-warmer-wood/",
+      "slug": "towel-warmer-wood",
+      "sources": [
+        "kategori:havlu-ve-steril-cihazlari",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/towel-warmer/",
+      "slug": "towel-warmer",
+      "sources": [
+        "kategori:havlu-ve-steril-cihazlari",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/trend-masaj-yatagi/",
+      "slug": "trend-masaj-yatagi",
+      "sources": [
+        "anasayfa",
+        "kategori:masaj-terapi-yataklari",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/trend-tuz-kum-yatagi/",
+      "slug": "trend-tuz-kum-yatagi",
+      "sources": [
+        "kategori:masaj-terapi-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/uranus-dinlenme-yatagi/",
+      "slug": "uranus-dinlenme-yatagi",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/venus-dinlenme-yatagi/",
+      "slug": "venus-dinlenme-yatagi",
+      "sources": [
+        "kategori:dinlenme-yataklari",
+        "liste",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/wet-areas/",
+      "slug": "wet-areas",
+      "sources": [
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/yag-ve-tas-isitici-cihazi/",
+      "slug": "yag-ve-tas-isitici-cihazi",
+      "sources": [
+        "kategori:sicak-tas-isitici-setler",
+        "sitemap"
+      ]
+    },
+    {
+      "url": "https://www.spaworld.com.tr/portfolios/yardimci-urunler/",
+      "slug": "yardimci-urunler",
+      "sources": [
+        "kategori:yardimci",
+        "liste",
+        "sitemap"
+      ]
+    }
+  ],
+  "appendixBDiff": {
+    "added": [],
+    "missing": [],
+    "onlySitemapLive": [
+      "wet-areas"
+    ]
+  }
+}

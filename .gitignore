@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.astro/
+data/raw/
+spadunyasi-dist.zip
+reports/screenshots/
+reports/lighthouse/*.html
+test-results/
+playwright-report/
+Thumbs.db
+desktop.ini
+.DS_Store
+*.log
+.scratch/
+dist-ga-test/
+.remember/
+spadunyasi-kaynak.zip

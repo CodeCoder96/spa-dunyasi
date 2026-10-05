@@ -1,0 +1,85 @@
+/* Design tokens (TAS-02, TAS-05, SAB-12). Raw colour values live ONLY in this file. */
+@layer tokens {
+  :root {
+    color-scheme: only light;
+
+    /* Colours */
+    --c-bg: #f7f5f0;
+    --c-surface: #fff;
+    --c-sand: #efeae1;
+    --c-ink: #1c2321;
+    --c-ink-2: #5b6460;
+    --c-line: #e2dcd0;
+    --c-primary: #2f5d50;
+    --c-primary-hover: #244a40;
+    --c-on-primary: #fff;
+    --c-accent: #8a5d33;
+    --c-focus: var(--c-primary);
+    --c-focus-on-dark: var(--c-bg);
+    --c-scrim: rgb(28 35 33 / 55%);
+
+    /* Typography (TAS-03) */
+    --font-body: var(--font-inter), system-ui, sans-serif;
+    --font-head: var(--font-fraunces), georgia, serif;
+    --fs-body: clamp(1rem, 0.96rem + 0.18vw, 1.0625rem);
+    --fs-small: 0.875rem;
+    --fs-xs: 0.8125rem;
+    --fs-lead: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+    --fs-h1: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem);
+    --fs-h2: clamp(1.75rem, 1.45rem + 1.3vw, 2.375rem);
+    --fs-h3: clamp(1.375rem, 1.27rem + 0.45vw, 1.625rem);
+    --fs-h4: 1.125rem;
+    --lh-body: 1.65;
+    --lh-tight: 1.1;
+    --lh-head: 1.2;
+    --measure: 68ch;
+    --measure-article: 70ch;
+
+    /* Spacing: 4 px base (TAS-05) */
+    --s-1: 0.25rem;
+    --s-2: 0.5rem;
+    --s-3: 0.75rem;
+    --s-4: 1rem;
+    --s-5: 1.25rem;
+    --s-6: 1.5rem;
+    --s-8: 2rem;
+    --s-10: 2.5rem;
+    --s-12: 3rem;
+    --s-16: 4rem;
+    --s-20: 5rem;
+    --s-24: 6rem;
+    --s-32: 8rem;
+    --section-y: clamp(var(--s-12), 6vw, var(--s-24));
+
+    /* Layout */
+    --content-max: 1280px;
+    --gutter: clamp(16px, 4vw, 40px);
+    --header-h: 64px;
+    --mobile-bar-h: 60px;
+    --mobile-bar-space: calc(var(--mobile-bar-h) + env(safe-area-inset-bottom));
+
+    /* Shape */
+    --radius-card: 16px;
+    --radius-chip: 8px;
+    --radius-pill: 999px;
+    --border: 1px solid var(--c-line);
+    --shadow-header: 0 1px 0 var(--c-line), 0 6px 18px rgb(28 35 33 / 6%);
+    --shadow-card: 0 1px 2px rgb(28 35 33 / 5%);
+
+    /* Motion (TAS-09) */
+    --dur: 180ms;
+    --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+
+    /* Layers (SAB-12) */
+    --z-mobile-bar: 90;
+    --z-header: 100;
+    --z-cookie: 110;
+  }
+
+  @media (width >= 1024px) {
+    :root {
+      --header-h: 80px;
+      --mobile-bar-space: 0px;
+    }
+  }
+}

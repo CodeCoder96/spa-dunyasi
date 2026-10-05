@@ -1,0 +1,13 @@
+{
+  "id": "kal-11-17-browser",
+  "title": "Playwright: axe, görsel QA, JS kapalı, konsol/CSP, analytics, teklif listesi, klavye",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "tests": 217,
+    "passed": 217
+  },
+  "ms": 168039,
+  "ok": true,
+  "at": "2026-10-04T00:36:31.604Z"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "kal-18-typescript",
+  "title": "astro check (strict TypeScript) 0 hata",
+  "errors": [],
+  "warnings": [],
+  "info": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "ms": 12849,
+  "ok": true,
+  "at": "2026-10-03T20:38:05.402Z"
+}

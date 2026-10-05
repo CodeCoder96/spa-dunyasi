@@ -1,0 +1,250 @@
+---
+// Product gallery (SAB-03). Base: CSS scroll-snap track + #g-N thumbnail anchors + links to full-size files.
+// Enhanced by src/scripts/gallery.ts (smooth scroll, aria-current, fullscreen <dialog>).
+import Img from './Img.astro';
+import Icon from './Icon.astro';
+import Placeholder from './Placeholder.astro';
+import type { ProductImage } from '../lib/catalog-schema.ts';
+import { asset, buildImage } from '../lib/images.ts';
+import { t, type Lang } from '../i18n/ui.ts';
+
+interface Props {
+  images: ProductImage[];
+  lang: Lang;
+  sizes: string;
+}
+const { images, lang, sizes } = Astro.props;
+const single = images.length === 1;
+const full = await Promise.all(images.map((im) => buildImage(asset(im.file), 1600)));
+---
+
+{
+  images.length === 0 ? (
+    <div class="gallery gallery--empty">
+      <Placeholder lang={lang} />
+    </div>
+  ) : (
+    <div class="gallery" data-gallery>
+      <div class="gallery__track" role="region" aria-label={t(lang, 'product.gallery')} tabindex="0" data-gallery-track>
+        {images.map((im, i) => (
+          <figure class:list={['gallery__slide', im.background === 'studio' && 'gallery__slide--studio']} id={`g-${i + 1}`}>
+            <a class="gallery__open" href={full[i]!.src} data-gallery-open={i} data-full={full[i]!.src} data-full-srcset={full[i]!.webp}>
+              <Img src={asset(im.file)} alt={im.alt[lang]} sizes={sizes} priority={i === 0} lowPriority={i > 0} fit="contain" />
+              <span class="gallery__zoom" aria-hidden="true">
+                <Icon name="expand" size={18} />
+              </span>
+            </a>
+            {im.variant && <figcaption class="gallery__caption">{im.variant[lang]}</figcaption>}
+          </figure>
+        ))}
+      </div>
+      {!single && (
+        <ol role="list" class="gallery__thumbs">
+          {images.map((im, i) => (
+            <li>
+              <a class="gallery__thumb" href={`#g-${i + 1}`} data-gallery-thumb={i} aria-current={i === 0 ? 'true' : undefined}>
+                <Img src={asset(im.file)} alt="" sizes="96px" maxWidth={192} fit="cover" lowPriority />
+                <span class="visually-hidden">
+                  {t(lang, 'product.photo')} {i + 1}
+                  {im.variant ? `: ${im.variant[lang]}` : ''}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      )}
+      <dialog class="lightbox no-print" aria-label={t(lang, 'product.gallery')} data-lightbox>
+        <img class="lightbox__img" src={full[0]!.src} alt={images[0]!.alt[lang]} loading="lazy" decoding="async" data-lightbox-img />
+        <p class="lightbox__counter" data-lightbox-counter aria-live="polite"></p>
+        <button type="button" class="lightbox__btn lightbox__close" data-lightbox-close>
+          <Icon name="close" size={24} /><span class="visually-hidden">{t(lang, 'quote.close')}</span>
+        </button>
+        {!single && (
+          <>
+            <button type="button" class="lightbox__btn lightbox__prev" data-lightbox-prev>
+              <Icon name="chevron-left" size={28} /><span class="visually-hidden">{t(lang, 'product.prev')}</span>
+            </button>
+            <button type="button" class="lightbox__btn lightbox__next" data-lightbox-next>
+              <Icon name="chevron-right" size={28} /><span class="visually-hidden">{t(lang, 'product.next')}</span>
+            </button>
+          </>
+        )}
+      </dialog>
+    </div>
+  )
+}
+
+<script>
+  import '../scripts/gallery.ts';
+</script>
+
+<style>
+  @layer components {
+    .gallery {
+      display: grid;
+      gap: var(--s-3);
+      min-width: 0;
+    }
+
+    .gallery__track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 100%;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
+      scrollbar-width: none;
+      border-radius: var(--radius-card);
+      border: var(--border);
+      background: var(--c-surface);
+    }
+
+    .gallery__track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .gallery__slide {
+      position: relative;
+      scroll-snap-align: start;
+      aspect-ratio: 4 / 3;
+      background: var(--c-surface);
+    }
+
+    .gallery__open {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: zoom-in;
+    }
+
+    .gallery__open :global(.img) {
+      width: 100%;
+      height: 100%;
+    }
+
+    .gallery__zoom {
+      position: absolute;
+      right: var(--s-3);
+      bottom: var(--s-3);
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-pill);
+      background: var(--c-surface);
+      border: var(--border);
+      color: var(--c-ink);
+    }
+
+    .gallery__caption {
+      position: absolute;
+      left: var(--s-3);
+      top: var(--s-3);
+      padding: var(--s-1) var(--s-3);
+      border-radius: var(--radius-chip);
+      background: var(--c-surface);
+      border: var(--border);
+      font-size: var(--fs-small);
+      font-weight: 500;
+    }
+
+    .gallery__thumbs {
+      display: flex;
+      gap: var(--s-2);
+      overflow-x: auto;
+      padding-block: var(--s-1);
+      scrollbar-width: thin;
+    }
+
+    .gallery__thumb {
+      position: relative;
+      display: block;
+      flex: none;
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius-chip);
+      overflow: hidden;
+      border: 2px solid transparent;
+      background: var(--c-sand);
+    }
+
+    .gallery__thumb :global(.img) {
+      width: 100%;
+      height: 100%;
+    }
+
+    .gallery__thumb[aria-current='true'] {
+      border-color: var(--c-primary);
+    }
+
+    @media (width >= 768px) {
+      .gallery__thumb {
+        width: 88px;
+        height: 88px;
+      }
+    }
+
+    .lightbox {
+      width: 100vw;
+      height: 100dvh;
+      max-width: none;
+      max-height: none;
+      margin: 0;
+      background: var(--c-ink);
+      color: var(--c-bg);
+      --c-focus: var(--c-focus-on-dark);
+    }
+
+    .lightbox[open] {
+      display: grid;
+      place-items: center;
+    }
+
+    .lightbox::backdrop {
+      background: var(--c-ink);
+    }
+
+    .lightbox__img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      touch-action: pan-y;
+    }
+
+    .lightbox__counter {
+      position: absolute;
+      left: var(--s-4);
+      top: var(--s-4);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .lightbox__btn {
+      position: absolute;
+      display: inline-grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-pill);
+      background: var(--c-ink);
+      color: var(--c-bg);
+      border: 1px solid var(--c-ink-2);
+    }
+
+    .lightbox__close {
+      top: var(--s-3);
+      right: var(--s-3);
+    }
+
+    .lightbox__prev {
+      left: var(--s-3);
+      top: 50%;
+      translate: 0 -50%;
+    }
+
+    .lightbox__next {
+      right: var(--s-3);
+      top: 50%;
+      translate: 0 -50%;
+    }
+  }
+</style>
